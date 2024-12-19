@@ -1,0 +1,4 @@
+Convém não ter lookups em consultas
+Especialmente quando se têm de se fazer várias consultas por dia
+
+Subset cria um documento há parte com os dados realmente necessários de dois documentos
