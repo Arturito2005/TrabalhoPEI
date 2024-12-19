@@ -1,0 +1,6 @@
+Estasticias sobre as transferências realizadas:
+
+- Número total de transferências:
+	- por motivo;
+	- por tipo;
+	- por hospital;

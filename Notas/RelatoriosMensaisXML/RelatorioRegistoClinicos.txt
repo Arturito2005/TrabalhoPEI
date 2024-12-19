@@ -1,0 +1,9 @@
+Estastiticas gerais:
+
+- Número de pacientes atendidos (por faixa etária e género)
+
+- Numeros de registos clínicos por especialidade
+
+- Numero de tratamentos realizados
+
+- Número de condições crónicas diagnosticadas
