@@ -1,0 +1,50 @@
+class AtualizacoesTratamentos {
+    - ID_Tratamento
+    - ID_Registro_Clinico
+    - Tipo_Tratamento
+    - Realizado
+}
+
+class Pacientes {
+    - ID_Paciente
+    - Nome_Completo
+    - Data_Nascimento
+    - Genero 
+    - Email
+    - Data_Registo
+}
+
+class Profissionais {
+    - ID_profissional
+    - Nome_Completo
+    - Escepialidade
+    - Anos_Experiencia
+}
+
+class RegistoClinico {
+    - ID_Atendimento
+    - ID_Paciente
+    - ID_profissional
+    - Data_Atendimento
+    - Tipo_Diagnostico
+    - Codigo_CID10
+    - Descricao_Diagnostico
+}
+
+class Transferencia {
+    - ID_Transferencia
+    - ID_Paciente
+    - ID_Profissional
+    - Data_Transferencia
+    - Motivo 
+    - Destino 
+    - Tipo_Transferencia
+    - Hospital_Destino 
+}
+
+class Tratamento {
+    - ID_Tratamento 
+    - ID_Registo
+    - Tipo_Tramento 
+    - Realizado 
+}
