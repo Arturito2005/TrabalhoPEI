@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.XSDGeral.com/infoGeralHospital"
+    targetNamespace="https://www.XSDGeral.com/infoGeralHospital"
+    elementFormDefault="qualified">
+    
+    <xs:complexType name="hospitalInfoGeralType">
+        <xs:sequence>
+            <xs:element name="nome" type="nomeType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="morada" type="moradaType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        
+        <xs:attribute ref="id"/>
+    </xs:complexType>
+    
+    <xs:attribute name="id">
+        <xs:simpleType>
+            <xs:restriction base="xs:int"/>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:simpleType name="nomeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    
+    <xs:simpleType name="moradaType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+        </xs:restriction>    
+    </xs:simpleType>
     
 </xs:schema>

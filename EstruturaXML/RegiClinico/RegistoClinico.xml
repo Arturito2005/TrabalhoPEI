@@ -23,7 +23,10 @@
                 <email></email>
             </contacto>
             
-            <!-- Ver os tipos no enunciado -->
+            <!-- Ver os tipos no enunciado 
+            Aqui tem mais uma prova do porque o registo clinico fica no paciente,
+            para saber quanto atendimentos tem no hospital
+            -->
             <tipo_paciente></tipo_paciente> 
         </paciente>  
    </lista_pacientes>  

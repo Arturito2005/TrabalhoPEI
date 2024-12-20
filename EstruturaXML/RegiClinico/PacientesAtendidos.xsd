@@ -1,4 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="https://www.RegistoClinicos.com/listaPacientes"
+    targetNamespace="https://www.RegistoClinicos.com/listaPacientes"
+    elementFormDefault="qualified">
     
+    <xs:complexType name="pacienteType">
+        <xs:sequence>
+            <xs:element name="nome" type="nomeType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="dataNasc" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="genero" type="generoType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="contacto" type="contactoType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tipo_paciente" type="tipo_pacienteType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        
+        <xs:attribute name="id">
+            <xs:simpleType>
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:simpleType name="nomeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    <xs:simpleType name="generoType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="M|F"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="contactoType">
+        <xs:sequence>
+            <xs:element name="telefone"/>
+            <xs:element name="email"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="telefoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}"/>
+            <xs:pattern value="não fornecido"/>
+        </xs:restriction>
+    </xs:simpleType>
+   
+    <xs:simpleType name="emailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Za-z0-9._%+-]+)@([A-Za-z0-9.-]+\.[A-Za-z]{2,})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Ver como apresentar o tipo  -->
+    <xs:simpleType name="tipo_pacienteType">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

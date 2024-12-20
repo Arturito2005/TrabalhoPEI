@@ -12,6 +12,8 @@ class Pacientes {
     - Genero 
     - Email
     - Data_Registo
+
+    - Registo_Clinicos[]
 }
 
 class Profissionais {
