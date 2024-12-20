@@ -7,8 +7,8 @@
     <xs:complexType name="resumoMensalType">
         <xs:sequence>
             <xs:element name="paciente_atendidos" type="pacienteAtendidoType"/>
-            <xs:element name="dataNasc" type="xs:date" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="genero" type="generoType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="dataNasc" type="xs:date"/>
+            <xs:element name="genero" type="generoType"/>
         </xs:sequence>
         
         <xs:attribute name="id">
@@ -36,7 +36,7 @@
 
     <xs:complexType name="faixaEtariaType">
         <xs:sequence>
-            <xs:element name="idades" type="idadeType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="idades" type="idadeType"/>
             <xs:element name="especialidades" type="especialidadesType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="tot_tratamentos" type="totTratamentosType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="total_condicoes_cronicas" type="totCronicasType" minOccurs="0" maxOccurs="1"/> 
@@ -65,7 +65,7 @@
     <xs:complexType name="especialidadesType">
         <xs:sequence>
             <xs:element name="especialidade" type="especialidadeType" minOccurs="1" maxOccurs="unbounded"/>
-            <xs:element name="tot_casos" type="totCasosType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tot_casos" type="totCasosType"/>
         </xs:sequence>
     </xs:complexType>
     

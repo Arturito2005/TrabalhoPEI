@@ -24,6 +24,7 @@
 
     
     <!-- Provavelemente o registoClinico vai ser igual há lista de Pacientes, em que tenho me mostrar todos os registos Clinicos do Hospital-->
+    <!-- Validar se a parte do tratamento do registo_clinico está finalizada -->
     <xs:complexType name="registo_clinico">
         <xs:sequence>
             <xs:element name="hospital" type="h:hospitalType"/>

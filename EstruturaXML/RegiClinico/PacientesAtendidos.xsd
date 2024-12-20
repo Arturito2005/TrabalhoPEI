@@ -6,11 +6,11 @@
     
     <xs:complexType name="pacienteType">
         <xs:sequence>
-            <xs:element name="nome" type="nomeType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="dataNasc" type="xs:date" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="genero" type="generoType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="contacto" type="contactoType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="tipo_paciente" type="tipo_pacienteType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="nome" type="nomeType"/>
+            <xs:element name="dataNasc" type="xs:date"/>
+            <xs:element name="genero" type="generoType"/>
+            <xs:element name="contacto" type="contactoType"/>
+            <xs:element name="tipo_paciente" type="tipo_pacienteType"/>
         </xs:sequence>
         
         <xs:attribute name="id">

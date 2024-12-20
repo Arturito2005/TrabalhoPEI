@@ -7,7 +7,11 @@
     <!-- Passar -->
     <xs:complexType name="registoClinicoType">
         <xs:sequence>
-            
+            <xs:element name="data" type="xs:dateTime"/>
+            <xs:element name="especialidade_med" type="especialidadeType"/>
+            <xs:element name="diagnosticos" type="diagnosticosType"/>
+            <xs:element name="tratamentos" type="tratamentosType"/>
+            <xs:element name="id_medico" type="idMedType"/>
         </xs:sequence>
         
         <xs:attribute name="codigo_atend">
@@ -19,4 +23,50 @@
         </xs:attribute>
     </xs:complexType>
     
+    <xs:simpleType name="especialidadeType">
+        <xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Inicio Diagnostico -->
+    <xs:complexType name="diagnosticosType">
+        <xs:sequence>
+            <xs:element name="diagnostico" type="diagnosticoType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="diagnosticoType">
+        <xs:sequence>
+            <xs:element name="tipo_diagnostico" type="tipoDiagType"/>
+            <xs:element name="descricao" type="descricaoType"/>
+        </xs:sequence>
+        
+        <xs:attribute name="Codigo_CID10">
+            <xs:simpleType>
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:simpleType name="tipoDiagType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Principal"/>
+            <xs:enumeration value="Secundario"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="descricaoType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Fim do Diagnostico -->
+    
+    <!-- Ver o que ira guardar esta lista de tratamentos -->
+    <xs:complexType name="tratamentosType"></xs:complexType>
+
+    <xs:simpleType name="idMedType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
