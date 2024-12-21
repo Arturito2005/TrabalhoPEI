@@ -16,7 +16,7 @@
     
     <!-- Inicio do elemento genero dos pacientes atendidos -->
     <xs:element name="genero">
-        <xs:complexType >
+        <xs:complexType>
             <xs:sequence>
                 <xs:element ref="faixa_etaria" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>

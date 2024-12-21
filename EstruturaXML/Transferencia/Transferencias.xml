@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<relatorio_transf>
-    <!-- ID como atributo reaproveitar o xsl do outro ou vice-versa -->
-    <!-- Acho que pode ter mais do que um hospital<-->
-    <hospital>
-        <nome></nome>
-        <morada></morada>
+<transferencias
+    xmlns="https://www.Transferencias.com/main"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.Transferencias.com/main main.xsd"
+    xmlns:h="https://www.Transferencias.com/infoHospital"
+    xmlns:rt="https://www.Transferencias.com/Transferencia"
+    xmlns:rm="https://www.Transferencias.com/ResumoMensal">
+
+    <hospitais>
+        <origem id="12">
+            <h:nome>Hospital Geral</h:nome>
+            <h:morada>Rua Saúde, 123</h:morada>
+        </origem>
         
-        <lista_transf>
-            <cod_paciente></cod_paciente>
-            <!-- Só pode ser 2 ver no enunciado -->
-            <tipo_transf></tipo_transf>
-            <relatorio_mensal_transf></relatorio_mensal_transf>
-        </lista_transf>
-        
-        <!-- Ver atributos -->
-        <relatorio_mensal></relatorio_mensal>
-    </hospital>
+        <destino id="13">
+            <h:nome>Hospital Santa Maria</h:nome>
+            <h:morada>Rua Exemplo, 124</h:morada>
+        </destino>
+    </hospitais>
     
-</relatorio_transf>
+    <registos_transferencias>
+        <transferencia>
+            <rt:cod_paciente>1</rt:cod_paciente>
+            <rt:data_transferecia>2024-07-22</rt:data_transferecia>
+            <rt:motivo>Consulta de segunda opinião</rt:motivo>
+            <rt:relatorio_medico>
+                <rt:diagnosticos>
+                    <rt:diagnostico Codigo_CID10="G40">
+                        <rt:tipo_diagnostico>Principal</rt:tipo_diagnostico>
+                        <rt:descricao>Epilepsia</rt:descricao>
+                    </rt:diagnostico>
+                </rt:diagnosticos>
+                
+                <rt:tratamentos>
+                    <rt:tratamento cod_tratamento="1">
+                        <rt:tipo>Paracetamol 1g</rt:tipo>
+                    </rt:tratamento>
+                </rt:tratamentos>
+            </rt:relatorio_medico>
+        </transferencia>
+    </registos_transferencias>
+    
+    <resumo_mensal>
+        <rm:tot_transferencias>12</rm:tot_transferencias>
+        <rm:motivos>
+            <rm:tot_transferencias>4</rm:tot_transferencias>
+            <rm:motivo>
+                <rm:nome>Exames complementares de diagnóstico</rm:nome>
+                <rm:tot_transferencias>4</rm:tot_transferencias>
+            </rm:motivo>
+        </rm:motivos>
+        <rm:tipos>
+            <rm:tot_transferencias>3</rm:tot_transferencias>
+            <rm:tipo>
+                <rm:nome>Urgente</rm:nome>
+                <rm:tot_transferencias>2</rm:tot_transferencias>
+            </rm:tipo>
+            <rm:tipo>
+                <rm:nome>Eletiva</rm:nome>
+                <rm:tot_transferencias>1</rm:tot_transferencias>
+            </rm:tipo>
+        </rm:tipos>
+        <rm:hospitais>
+            <rm:tot_transferencias>2</rm:tot_transferencias>
+            <rm:hospital>
+                <rm:nome>Hospital Geral</rm:nome>
+                <rm:tot_transferencias>2</rm:tot_transferencias>
+            </rm:hospital>
+        </rm:hospitais>
+    </resumo_mensal>
+    
+</transferencias>

@@ -54,7 +54,7 @@
                     <rc:tipo_diagnostico>Secundario</rc:tipo_diagnostico>
                     <rc:descricao>Obesidade de grau I</rc:descricao>
                 </rc:diagnostico>
-            </rc:diagnosticos>
+            </rc:diagnosticos>     
             
             <rc:tratamentos>
                 <rc:tratamento cod_tratamento="1001">
@@ -70,8 +70,39 @@
     </lista_registos>
  
     <resumo_mensal>
-        
-        
+        <rm:tot_atendidos>380</rm:tot_atendidos>
+        <rm:especialidades>
+            <rm:especialidade>
+                <rm:nome_especialidade>Cardiologia</rm:nome_especialidade>
+                <rm:tot_tramentos>50</rm:tot_tramentos>
+                <rm:tot_condicoes_cronicas>10</rm:tot_condicoes_cronicas>
+            </rm:especialidade>
+            
+            <rm:especialidade>
+                <rm:nome_especialidade>Ortopedia</rm:nome_especialidade>
+                <rm:tot_tramentos>30</rm:tot_tramentos>
+                <rm:tot_condicoes_cronicas>5</rm:tot_condicoes_cronicas>
+            </rm:especialidade>
+            
+            <rm:especialidade>
+                <rm:nome_especialidade>Neurologia</rm:nome_especialidade>
+                <rm:tot_tramentos>60</rm:tot_tramentos>
+                <rm:tot_condicoes_cronicas>20</rm:tot_condicoes_cronicas>
+            </rm:especialidade>
+            
+            <rm:especialidade>
+                <rm:nome_especialidade>Pediatria</rm:nome_especialidade>
+                <rm:tot_tramentos>40</rm:tot_tramentos>
+                <rm:tot_condicoes_cronicas>8</rm:tot_condicoes_cronicas>
+            </rm:especialidade>
+            
+            <rm:especialidade>
+                <rm:nome_especialidade>Ginecologia</rm:nome_especialidade>
+                <rm:tot_tramentos>50</rm:tot_tramentos>
+                <rm:tot_condicoes_cronicas>18</rm:tot_condicoes_cronicas>
+            </rm:especialidade>
+            
+        </rm:especialidades>
         <rm:genero id_gen="M">
             <rm:faixa_etaria>
                 <rm:idades>0-18</rm:idades>

@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="https://www.RegistoClinicos.com/registoClinico"
-    targetNamespace="https://www.RegistoClinicos.com/registoClinico"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.Transferencias.com/Transferencia"
+    targetNamespace="https://www.Transferencias.com/Transferencia"
     elementFormDefault="qualified">
     
-    <xs:complexType name="registoClinicoType">
+    <!-- Inicio elemento transferencia -->
+    <xs:complexType name="transferenciaType"> 
         <xs:sequence>
-            <xs:element name="data" type="xs:dateTime"/>
-            <xs:element name="especialidade_med" type="especialidadeType"/>
-            <xs:element ref="diagnosticos"/>
-            <xs:element ref="tratamentos"/>
-            <xs:element name="id_medico" type="idType"/>
+            <xs:element name="cod_paciente" type="idType"/>
+            <xs:element name="data_transferecia" type="xs:date"/>
+            <xs:element name="motivo" type="motivoType"/>
+            <xs:element ref="relatorio_medico"/>
         </xs:sequence>
-        
-        <xs:attribute name="codigo_atend" type="idType"/>  
-    </xs:complexType>
+    </xs:complexType>     
     
     <xs:simpleType name="idType">
         <xs:restriction base="xs:int">
             <xs:minInclusive value="0"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <xs:simpleType name="motivoType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="tipo_transferencia">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Urgente"/>
+                <xs:enumeration value="Eletiva"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- Fim do elemento transferencia -->
+    
+    <!-- Inicio do Relatorio Medicos -->
+    <xs:element name="relatorio_medico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="diagnosticos"/>
+                <xs:element ref="tratamentos"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>  
     
     <!-- Inicio elemento diagnosticos -->
     <xs:element name="diagnosticos">
@@ -41,7 +65,7 @@
             <xs:attribute name="Codigo_CID10" type="CID10Type"/>        
         </xs:complexType>
     </xs:element>
-
+    
     <xs:simpleType name="CID10Type">
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
@@ -86,8 +110,6 @@
     </xs:simpleType>
     
     <!-- Fim do tratamentos -->
+    <!-- Fim do relatorio mensal -->
     
-    <xs:simpleType name="especialidadeType">
-        <xs:restriction base="xs:string"></xs:restriction>
-    </xs:simpleType>    
 </xs:schema>
