@@ -17,7 +17,6 @@
     
     <!-- Lista de pacientes -->
     <lista_paciente>
-
         <paciente id="12345">
             <p:nome>João Silva</p:nome>
             <p:data_nascimento>1985-07-22</p:data_nascimento>
@@ -71,6 +70,8 @@
     </lista_registos>
  
     <resumo_mensal>
+        
+        
         <rm:genero id_gen="M">
             <rm:faixa_etaria>
                 <rm:idades>0-18</rm:idades>
