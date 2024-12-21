@@ -21,23 +21,31 @@
     <xs:import namespace="https://www.RegistoClinicos.com/ResumoMensal" 
         schemaLocation="./ResumoMensal.xsd"/>
     
-
+    <xs:element name="relatorio_clinico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="hospital" type="h:hospitalType"/>
+                <xs:element ref="lista_paciente"/>
+                <xs:element ref="lista_registos"/>
+                <xs:element name="resumo_mensal" type="rm:resumoMensalType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
-    <!-- Provavelemente o registoClinico vai ser igual há lista de Pacientes, em que tenho me mostrar todos os registos Clinicos do Hospital-->
-    <!-- Validar se a parte do tratamento do registo_clinico está finalizada -->
-    <xs:complexType name="registo_clinico">
-        <xs:sequence>
-            <xs:element name="hospital" type="h:hospitalType"/>
-            <xs:element name="lista_paciente" type="listaType" />
-            <xs:element name="registo_clinico" type="rc:registoClinicoType"/>
-            <xs:element name="resumo_mensal" type="rm:resumoMensalType"/>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="lista_paciente">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="paciente" type="p:pacienteType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
-    <xs:complexType name="listaType">
-        <xs:sequence>
-            <xs:element name="paciente" type="p:pacienteType" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="lista_registos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="registo_clinico" type="rc:registoClinicoType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

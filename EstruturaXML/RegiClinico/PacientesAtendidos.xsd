@@ -7,20 +7,20 @@
     <xs:complexType name="pacienteType">
         <xs:sequence>
             <xs:element name="nome" type="nomeType"/>
-            <xs:element name="dataNasc" type="xs:date"/>
+            <xs:element name="data_nascimento" type="xs:date"/>
             <xs:element name="genero" type="generoType"/>
-            <xs:element name="contacto" type="contactoType"/>
+            <xs:element ref="contacto"/>
             <xs:element name="tipo_paciente" type="tipo_pacienteType"/>
         </xs:sequence>
         
-        <xs:attribute name="id">
-            <xs:simpleType>
-                <xs:restriction base="xs:int">
-                    <xs:minInclusive value="0"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
+        <xs:attribute name="id" type="idType"/> 
     </xs:complexType>
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:simpleType name="nomeType">
         <xs:restriction base="xs:string">
@@ -35,12 +35,15 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="contactoType">
-        <xs:sequence>
-            <xs:element name="telefone"/>
-            <xs:element name="email"/>
-        </xs:sequence>
-    </xs:complexType>
+    <!-- Inicio do elemento contacto -->
+    <xs:element name="contacto">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element name="telefone" type="telefoneType"/>
+                <xs:element name="email" type="emailType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
     <xs:simpleType name="telefoneType">
         <xs:restriction base="xs:string">
@@ -52,8 +55,10 @@
     <xs:simpleType name="emailType">
         <xs:restriction base="xs:string">
             <xs:pattern value="([A-Za-z0-9._%+-]+)@([A-Za-z0-9.-]+\.[A-Za-z]{2,})"/>
+            <xs:pattern value="não fornecido"/>
         </xs:restriction>
     </xs:simpleType>
+    <!-- Fim do elemento contacto -->
     
     <xs:simpleType name="tipo_pacienteType">
         <xs:restriction base="xs:string">

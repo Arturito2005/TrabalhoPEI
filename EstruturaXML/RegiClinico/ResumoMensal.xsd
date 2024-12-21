@@ -6,42 +6,41 @@
     
     <xs:complexType name="resumoMensalType">
         <xs:sequence>
-            <xs:element name="paciente_atendidos" type="pacienteAtendidoType"/>
-            <xs:element name="dataNasc" type="xs:date"/>
-            <xs:element name="genero" type="generoType"/>
-        </xs:sequence>
-        
-        <xs:attribute name="id">
-            <xs:simpleType>
-                <xs:restriction base="xs:int">
-                    <xs:minInclusive value="0"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-    </xs:complexType>
-    
-    <xs:complexType name="pacienteAtendidoType">
-        <xs:sequence>
-            <xs:element name="genero" type="generoType" minOccurs="0" maxOccurs="2"/>
+            <xs:sequence>
+                <xs:element ref="genero" minOccurs="0" maxOccurs="2"/>
+            </xs:sequence>
         </xs:sequence>
     </xs:complexType>
     
-    <!-- Dentro de cada genero mostramos cada uma das faixas etarias e os respetivos campos -->
-    <xs:complexType name="generoType">
-        <xs:sequence>
-            <xs:element name="faixa_etaria" type="faixaEtariaType" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
+    <!-- Inicio do elemento genero dos pacientes atendidos -->
+    <xs:element name="genero">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element ref="faixa_etaria" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            
+            <xs:attribute name="id_gen" type="generoType"/>
+        </xs:complexType>
+    </xs:element>
     
+    <xs:simpleType name="generoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="F"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <xs:complexType name="faixaEtariaType">
-        <xs:sequence>
-            <xs:element name="idades" type="idadeType"/>
-            <xs:element name="especialidades" type="especialidadesType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="tot_tratamentos" type="totTratamentosType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="total_condicoes_cronicas" type="totCronicasType" minOccurs="0" maxOccurs="1"/> 
-        </xs:sequence>
-    </xs:complexType>
+    <!-- Inicio do elemento para as faixas etarias, por genero -->
+    <xs:element name="faixa_etaria">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idades" type="idadeType"/>
+                <xs:element name="tot_atendidos" type="totType"/>
+                <xs:element ref="especialidades" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
     
     <xs:simpleType name="idadeType">
         <xs:restriction base="xs:string">
@@ -49,33 +48,39 @@
         </xs:restriction>
     </xs:simpleType>
     
-    <xs:simpleType name="totTratamentosType">
-        <xs:restriction base="xs:int">
-            <xs:minExclusive value="0"/>
-        </xs:restriction>
-    </xs:simpleType>
+    <!-- Inicio do elemento especialidades -->
+    <xs:element name="especialidades">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="especialidade" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
-    <xs:simpleType name="totCronicasType">
-        <xs:restriction base="xs:int">
-            <xs:minExclusive value="0"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- Codigo para o tipo de especialidade -->
-    <xs:complexType name="especialidadesType">
-        <xs:sequence>
-            <xs:element name="especialidade" type="especialidadeType" minOccurs="1" maxOccurs="unbounded"/>
-            <xs:element name="tot_casos" type="totCasosType"/>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="especialidade">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome_especialidade"/>
+                <xs:element name="tot_tramentos" type="totType"/>
+                <xs:element name="tot_condicoes_cronicas" type="totType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
     <xs:simpleType name="especialidadeType">
         <xs:restriction base="xs:string">
             <xs:maxLength value="100"/>
         </xs:restriction>
     </xs:simpleType>
+   
+    <!-- Fim do elemento de especialidade -->
+    <!-- Fim do elemento de faixa Etarias -->
+    <!-- Fim do lemento genero dos pacientes atendidos -->
+    <!-- Fim do elemento pacientes_atendidos -->
     
-    <xs:simpleType name="totCasosType">
+    <!-- Simple Type geral para qualquer elemento que seja um total de qualquer coisa -->
+    <xs:simpleType name="totType">
         <xs:restriction base="xs:int">
             <xs:minExclusive value="0"/>
         </xs:restriction>

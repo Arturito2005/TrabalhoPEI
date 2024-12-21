@@ -9,43 +9,48 @@
         <xs:sequence>
             <xs:element name="data" type="xs:dateTime"/>
             <xs:element name="especialidade_med" type="especialidadeType"/>
-            <xs:element name="diagnosticos" type="diagnosticosType"/>
-            <xs:element name="tratamentos" type="tratamentosType"/>
-            <xs:element name="id_medico" type="idMedType"/>
+            <xs:element ref="diagnosticos"/>
+            <xs:element ref="tratamentos" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="id_medico" type="idType"/>
         </xs:sequence>
         
-        <xs:attribute name="codigo_atend">
-            <xs:simpleType>
-                <xs:restriction base="xs:int">
-                    <xs:minInclusive value="0"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
+        <xs:attribute name="codigo_atend" type="idType"/>  
     </xs:complexType>
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:simpleType name="especialidadeType">
         <xs:restriction base="xs:string"></xs:restriction>
     </xs:simpleType>
     
-    <!-- Inicio Diagnostico -->
-    <xs:complexType name="diagnosticosType">
-        <xs:sequence>
-            <xs:element name="diagnostico" type="diagnosticoType" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
+    <!-- Inicio dos Diagnosticos -->
+    <xs:element name="diagnosticos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="diagnostico" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
-    <xs:complexType name="diagnosticoType">
-        <xs:sequence>
-            <xs:element name="tipo_diagnostico" type="tipoDiagType"/>
-            <xs:element name="descricao" type="descricaoType"/>
-        </xs:sequence>
-        
-        <xs:attribute name="Codigo_CID10">
-            <xs:simpleType>
-                <xs:restriction base="xs:string"/>
-            </xs:simpleType>
-        </xs:attribute>
-    </xs:complexType>
+    <!-- Inicio do elemento diagnostico -->
+    <xs:element name="diagnostico">
+       <xs:complexType>
+           <xs:sequence>
+               <xs:element name="tipo_diagnostico" type="tipoDiagType"/>
+               <xs:element name="descricao" type="descricaoType"/>
+           </xs:sequence>
+           
+           <xs:attribute name="Codigo_CID10">
+               <xs:simpleType>
+                   <xs:restriction base="xs:string"/>
+               </xs:simpleType>
+           </xs:attribute>
+       </xs:complexType>
+    </xs:element>
     
     <xs:simpleType name="tipoDiagType">
         <xs:restriction base="xs:string">
@@ -59,14 +64,36 @@
             <xs:maxLength value="250"/>
         </xs:restriction>
     </xs:simpleType>
-    <!-- Fim do Diagnostico -->
+    <!-- Fim do elemento diagnostico -->
+    <!-- Fim dos Diagnosticos -->
     
-    <!-- Ver o que ira guardar esta lista de tratamentos -->
-    <xs:complexType name="tratamentosType"></xs:complexType>
+    <!-- Inicio do elemento tratamentos-->
+    <xs:element name="tratamentos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tratamento" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Inicio do elemento tratamento-->
+    <xs:element name="tratamento">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipo" type="tratamentoType"/>
+            </xs:sequence>
+            
+            <xs:attribute name="cod_tratamento" type="idType"/>  
+        </xs:complexType>
 
-    <xs:simpleType name="idMedType">
-        <xs:restriction base="xs:int">
-            <xs:minInclusive value="0"/>
+    </xs:element>
+    
+    <xs:simpleType name="tratamentoType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
         </xs:restriction>
     </xs:simpleType>
+    <!-- Fim do elemento tratamento -->
+    <!-- Fim do elemento tratamentos -->
+    
 </xs:schema>
