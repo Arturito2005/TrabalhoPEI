@@ -3,19 +3,22 @@
     xmlns="https://www.Transferencias.com/main"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://www.Transferencias.com/main main.xsd"
+    xmlns:hg="https://www.XSDGeral.com/infoGeralHospital"
     xmlns:h="https://www.Transferencias.com/infoHospital"
     xmlns:rt="https://www.Transferencias.com/Transferencia"
-    xmlns:rm="https://www.Transferencias.com/ResumoMensal">
+    xmlns:rm="https://www.Transferencias.com/ResumoMensal"
+    xmlns:tra="https://www.XSDGeral.com/Tratamento"
+    xmlns:d="https://www.XSDGeral.com/Diagnostico">
 
     <hospitais>
-        <origem id="12">
-            <h:nome>Hospital Geral</h:nome>
-            <h:morada>Rua Saúde, 123</h:morada>
+        <origem hg:id="12">
+            <hg:nome>Hospital Geral</hg:nome>
+            <hg:morada>Rua Saúde, 123</hg:morada>
         </origem>
         
-        <destino id="13">
-            <h:nome>Hospital Santa Maria</h:nome>
-            <h:morada>Rua Exemplo, 124</h:morada>
+        <destino hg:id="13">
+            <hg:nome>Hospital Santa Maria</hg:nome>
+            <hg:morada>Rua Exemplo, 124</hg:morada>
         </destino>
     </hospitais>
     
@@ -25,18 +28,18 @@
             <rt:data_transferecia>2024-07-22</rt:data_transferecia>
             <rt:motivo>Consulta de segunda opinião</rt:motivo>
             <rt:relatorio_medico>
-                <rt:diagnosticos>
-                    <rt:diagnostico Codigo_CID10="G40">
-                        <rt:tipo_diagnostico>Principal</rt:tipo_diagnostico>
-                        <rt:descricao>Epilepsia</rt:descricao>
-                    </rt:diagnostico>
-                </rt:diagnosticos>
+                <d:diagnosticos>
+                    <d:diagnostico Codigo_CID10="G40">
+                        <d:tipo_diagnostico>Principal</d:tipo_diagnostico>
+                        <d:descricao>Epilepsia</d:descricao>
+                    </d:diagnostico>
+                </d:diagnosticos>
                 
-                <rt:tratamentos>
-                    <rt:tratamento cod_tratamento="1">
-                        <rt:tipo>Paracetamol 1g</rt:tipo>
-                    </rt:tratamento>
-                </rt:tratamentos>
+                <tra:tratamentos>
+                    <tra:tratamento cod_tratamento="1">
+                        <tra:tipo>Paracetamol 1g</tra:tipo>
+                    </tra:tratamento >
+                </tra:tratamentos>
             </rt:relatorio_medico>
         </transferencia>
     </registos_transferencias>

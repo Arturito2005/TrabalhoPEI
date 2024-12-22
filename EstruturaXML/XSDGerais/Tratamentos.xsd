@@ -9,20 +9,22 @@
             <xs:sequence>
                 <xs:element ref="tratamento" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
-        </xs:complexType>
+        </xs:complexType>       
     </xs:element>
+
     
     <xs:element name="tratamento">
-        <xs:complexType>
+        <xs:complexType >
             <xs:sequence>
-                <xs:element name="tipo" type="tratamentoType"/>
+                <xs:element name="tipo" type="tipoTratamentoType"/>
             </xs:sequence>
             
             <xs:attribute name="cod_tratamento" type="idType"/>  
         </xs:complexType>
     </xs:element>
+
     
-    <xs:simpleType name="tratamentoType">
+    <xs:simpleType name="tipoTratamentoType">
         <xs:restriction base="xs:string">
             <xs:maxLength value="250"/>
         </xs:restriction>

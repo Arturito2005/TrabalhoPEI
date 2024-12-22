@@ -2,8 +2,16 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns="https://www.Transferencias.com/Transferencia"
     targetNamespace="https://www.Transferencias.com/Transferencia"
+    xmlns:t="https://www.XSDGeral.com/Tratamento"
+    xmlns:d="https://www.XSDGeral.com/Diagnostico"
     elementFormDefault="qualified">
     
+    <xs:import namespace="https://www.XSDGeral.com/Tratamento" 
+        schemaLocation="../XSDGerais/Tratamentos.xsd"/>
+    
+    <xs:import namespace="https://www.XSDGeral.com/Diagnostico" 
+        schemaLocation="../XSDGerais/Diagnosticos.xsd"/>
+
     <!-- Inicio elemento transferencia -->
     <xs:complexType name="transferenciaType"> 
         <xs:sequence>
@@ -40,76 +48,12 @@
     <xs:element name="relatorio_medico">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="diagnosticos"/>
-                <xs:element ref="tratamentos"/>
+                <xs:element ref="d:diagnosticos"/>
+                <xs:element ref="t:tratamentos"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>  
     
-    <!-- Inicio elemento diagnosticos -->
-    <xs:element name="diagnosticos">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="diagnostico" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    
-    <xs:element name="diagnostico">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="tipo_diagnostico" type="tipoDiagType"/>
-                <xs:element name="descricao" type="descricaoType"/>
-            </xs:sequence>
-            
-            <xs:attribute name="Codigo_CID10" type="CID10Type"/>        
-        </xs:complexType>
-    </xs:element>
-    
-    <xs:simpleType name="CID10Type">
-        <xs:restriction base="xs:string"/>
-    </xs:simpleType>
-    
-    <xs:simpleType name="tipoDiagType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Principal"/>
-            <xs:enumeration value="Secundario"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="descricaoType">
-        <xs:restriction base="xs:string">
-            <xs:maxLength value="250"/>
-        </xs:restriction>
-    </xs:simpleType>
-    <!-- Fim do diagnosticos -->
-    
-    <!-- Inicio Tratamentos -->
-    <xs:element name="tratamentos">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="tratamento" minOccurs="1" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    
-    <xs:element name="tratamento">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="tipo" type="tratamentoType"/>
-            </xs:sequence>
-            
-            <xs:attribute name="cod_tratamento" type="idType"/>  
-        </xs:complexType>
-    </xs:element>
-    
-    <xs:simpleType name="tratamentoType">
-        <xs:restriction base="xs:string">
-            <xs:maxLength value="250"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- Fim do tratamentos -->
     <!-- Fim do relatorio mensal -->
     
 </xs:schema>

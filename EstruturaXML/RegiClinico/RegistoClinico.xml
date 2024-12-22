@@ -3,14 +3,17 @@
     xmlns="https://www.RegistoClinicos.com/main"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://www.RegistoClinicos.com/main main.xsd"
+    xmlns:hg="https://www.XSDGeral.com/infoGeralHospital"
     xmlns:h="https://www.RegistoClinicos.com/infoHospital"
     xmlns:p="https://www.RegistoClinicos.com/listaPacientes"
     xmlns:rc="https://www.RegistoClinicos.com/registoClinico"
-    xmlns:rm="https://www.RegistoClinicos.com/ResumoMensal">
+    xmlns:rm="https://www.RegistoClinicos.com/ResumoMensal"
+    xmlns:tra="https://www.XSDGeral.com/Tratamento"
+    xmlns:d="https://www.XSDGeral.com/Diagnostico">
     
-    <hospital id="12">
-        <h:nome>Hospital Geral</h:nome>
-        <h:morada>Rua Saúde, 123</h:morada>
+    <hospital hg:id="12">
+        <hg:nome>Hospital Geral</hg:nome>
+        <hg:morada>Rua Saúde, 123</hg:morada>
         <h:mes>12</h:mes>
         <h:ano_fiscal>2024</h:ano_fiscal>
     </hospital>
@@ -45,25 +48,25 @@
             <rc:data>2024-12-21T10:30:00</rc:data>
             <rc:especialidade_med>Cardiologia</rc:especialidade_med>
             
-            <rc:diagnosticos>
-                <rc:diagnostico Codigo_CID10="I10">
-                    <rc:tipo_diagnostico>Principal</rc:tipo_diagnostico>
-                    <rc:descricao>Hipertensão essencial (primária)</rc:descricao>
-                </rc:diagnostico>
-                <rc:diagnostico Codigo_CID10="E66">
-                    <rc:tipo_diagnostico>Secundario</rc:tipo_diagnostico>
-                    <rc:descricao>Obesidade de grau I</rc:descricao>
-                </rc:diagnostico>
-            </rc:diagnosticos>     
+            <d:diagnosticos>
+                <d:diagnostico Codigo_CID10="I10">
+                    <d:tipo_diagnostico>Principal</d:tipo_diagnostico>
+                    <d:descricao>Hipertensão essencial (primária)</d:descricao>
+                </d:diagnostico>
+                <d:diagnostico Codigo_CID10="E66">
+                    <d:tipo_diagnostico>Secundario</d:tipo_diagnostico>
+                    <d:descricao>Obesidade de grau I</d:descricao>
+                </d:diagnostico>
+            </d:diagnosticos>     
             
-            <rc:tratamentos>
-                <rc:tratamento cod_tratamento="1001">
-                    <rc:tipo>Uso de medicamentos antihipertensivos</rc:tipo>
-                </rc:tratamento>
-                <rc:tratamento cod_tratamento="1002">
-                    <rc:tipo>Recomendações sobre dieta e exercício físico</rc:tipo>
-                </rc:tratamento>
-            </rc:tratamentos>
+            <tra:tratamentos>
+                <tra:tratamento cod_tratamento="1001">
+                    <tra:tipo>Uso de medicamentos antihipertensivos</tra:tipo>
+                </tra:tratamento>
+                <tra:tratamento cod_tratamento="1002">
+                    <tra:tipo>Recomendações sobre dieta e exercício físico</tra:tipo>
+                </tra:tratamento>
+            </tra:tratamentos>
             
             <rc:id_medico>98765</rc:id_medico>
         </registo_clinico>

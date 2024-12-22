@@ -10,11 +10,11 @@
     
     <xs:complexType name="hospitalType">
         <xs:sequence>
-            <xs:element name="nome" type="h:nomeType"/>
-            <xs:element name="morada" type="h:moradaType"/>
+            <xs:element ref="h:nome"/>
+            <xs:element ref="h:morada"/>
         </xs:sequence>
         
-        <xs:attribute name="id" type="h:idType"/>
+        <xs:attribute ref="h:id"/>
     </xs:complexType>    
 
 </xs:schema>
