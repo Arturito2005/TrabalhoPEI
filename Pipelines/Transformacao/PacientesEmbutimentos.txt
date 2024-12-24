@@ -1,0 +1,47 @@
+[
+  {
+    $lookup: {
+      from: "Transferencias",
+      localField: "ID_Paciente",
+      foreignField: "ID_Paciente",
+      as: "Transferencias"
+    }
+  },
+  {
+    $lookup: {
+      from: "AmostraRegistosClinicos",
+      localField: "ID_Paciente",
+      foreignField: "ID_Paciente",
+      as: "RegistoClinicos"
+    }
+  },
+  {
+    $project: {
+      ID_Paciente: 1,
+      Nome_Completo: 1,
+      Data_Nascimento: 1,
+      Género: 1,
+      Telefone: 1,
+      Email: 1,
+      "Transferencias.ID_Transferencia": 1,
+      "Transferencias.ID_Profissional": 1,
+      "Transferencias.Data_Transferencia": 1,
+      "Transferencias.Motivo": 1,
+      "Transferencias.Destino": 1,
+      "Transferencias.Tipo_Transferencia": 1,
+      "Transferencias.Hospital_Destino": 1,
+      "RegistoClinicos.ID_Atendimento": 1,
+      "RegistoClinicos.ID_Profissional": 1,
+      "RegistoClinicos.Data_Atendimento": 1,
+      "RegistoClinicos.Diagnosticos": 1,
+      "RegistoClinicos.Tratamentos": 1,
+      "RegistoClinicos.Especialidade": 1
+    }
+  },
+  {
+    $out: {
+      db: "TrabalhoGrupo",
+      coll: "Pacientes"
+    }
+  }
+]

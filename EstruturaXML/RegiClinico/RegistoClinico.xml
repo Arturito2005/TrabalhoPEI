@@ -59,6 +59,7 @@
                 </d:diagnostico>
             </d:diagnosticos>     
             
+            <!-- Pode faltar indicar se foi realizado ou nmão mas isso faz-se rapido -->
             <tra:tratamentos>
                 <tra:tratamento cod_tratamento="1001">
                     <tra:tipo>Uso de medicamentos antihipertensivos</tra:tipo>

@@ -1,15 +1,10 @@
-class AtualizacoesTratamentos {
-    - ID_Tratamento
-    - ID_Registro_Clinico
-    - Tipo_Tratamento
-    - Realizado
-}
-
+@startuml EstruturaExempllo
 class Pacientes {
     - ID_Paciente
     - Nome_Completo
     - Data_Nascimento
     - Genero 
+    - Numero_telefone
     - Email
     - Data_Registo
 }
@@ -21,15 +16,21 @@ class Profissionais {
     - Anos_Experiencia
 }
 
+/'
+ O array de diagnosticos possui estes dados:
+ - Tipo_Diagnostico
+ - Codigo_CID10
+ - Descricao_Diagnostico'/
 class RegistoClinico {
     - ID_Atendimento
     - ID_Paciente
     - ID_profissional
     - Data_Atendimento
-    - Tipo_Diagnostico
-    - Codigo_CID10
-    - Descricao_Diagnostico
+    - Array_Diangosticos
 }
+
+RegistoClinico "0..*" -- "1..1" Pacientes
+RegistoClinico "0..*" -- "1..1" Profissionais
 
 class Transferencia {
     - ID_Transferencia
@@ -42,9 +43,25 @@ class Transferencia {
     - Hospital_Destino 
 }
 
+Transferencia "0..*" --- "1..1" Pacientes
+Transferencia "0..*" --- "1..1" Profissionais
+Transferencia "1..1" -- "0..*" RegistoClinico
+
 class Tratamento {
     - ID_Tratamento 
     - ID_Registo
     - Tipo_Tramento 
     - Realizado 
 }
+
+Tratamento "0..*" -- "1..1" RegistoClinico
+
+class AtualizacoesTratamentos {
+    - ID_Tratamento
+    - ID_Registro_Clinico
+    - Tipo_Tratamento
+    - Realizado
+}
+
+AtualizacoesTratamentos "0..*" -- "1..1" RegistoClinico
+@enduml

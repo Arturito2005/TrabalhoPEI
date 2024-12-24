@@ -1,19 +1,23 @@
-class AtualizacoesTratamentos {
-    - ID_Tratamento
-    - ID_Registro_Clinico
-    - Tipo_Tratamento
-    - Realizado
-}
+@startuml ModelacoaBD
 
+/'Neste caso nao será necessario todos os dados do registo
+clinicos no paciente apenas o ID, data e secalhar
+o que diz que tem uma condição Crónica de ativa
+
+Se calhar até no final nem é preciso ter armazenado os 
+registos clinicos e só preciso sim fazer o lookup e depois
+fazer um addField, que dependendo dos registos Clinicos
+que ele tem é adicionado o tipo de paciente que ele tem
+'/
 class Pacientes {
     - ID_Paciente
     - Nome_Completo
     - Data_Nascimento
     - Genero 
+    - Numero_telefone
     - Email
     - Data_Registo
-
-    - Registo_Clinicos[]
+    - Array_Registos_Clinicos
 }
 
 class Profissionais {
@@ -23,16 +27,32 @@ class Profissionais {
     - Anos_Experiencia
 }
 
+/'
+ O array de diagnosticos possui estes dados:
+ - Tipo_Diagnostico
+ - Codigo_CID10
+ - Descricao_Diagnostico'/
 class RegistoClinico {
     - ID_Atendimento
     - ID_Paciente
     - ID_profissional
     - Data_Atendimento
-    - Tipo_Diagnostico
-    - Codigo_CID10
-    - Descricao_Diagnostico
+    - Array_Diangosticos
+    - ArrayTratamentos
+    - EspecialidadeMedica
 }
 
+RegistoClinico "0..*" -- "1..1" Pacientes
+RegistoClinico "0..*" -- "1..1" Profissionais
+
+/'Os Registos clinicos fomos buscar 
+atraces da conexão entre as transferencias
+e registos clinicosm pois ambos têm o 
+campo ID_Paciente'/
+
+/'O Array de Registos clinicos vai ter
+apenas os registos clinicos que obdecem
+ao que e pedido no xml'/
 class Transferencia {
     - ID_Transferencia
     - ID_Paciente
@@ -42,7 +62,12 @@ class Transferencia {
     - Destino 
     - Tipo_Transferencia
     - Hospital_Destino 
+    -Array_RegistosClinicos
 }
+
+Transferencia "0..*" --- "1..1" Pacientes
+Transferencia "0..*" --- "1..1" Profissionais
+Transferencia "1..1" -- "0..*" RegistoClinico
 
 class Tratamento {
     - ID_Tratamento 
@@ -50,3 +75,16 @@ class Tratamento {
     - Tipo_Tramento 
     - Realizado 
 }
+
+Tratamento "0..*" -- "1..1" RegistoClinico
+
+class AtualizacoesTratamentos {
+    - ID_Tratamento
+    - ID_Registro_Clinico
+    - Tipo_Tratamento
+    - Realizado
+}
+
+AtualizacoesTratamentos "0..*" -- "1..1" RegistoClinico
+
+@enduml

@@ -1,1 +1,0 @@
-Em ambos podemos adicionar mais campos ao relatório, provavelmente, visto que no enunciado está escrito "Dados omissos devem ser gerados/acrescentados por cada grupo"

@@ -22,6 +22,7 @@
         </destino>
     </hospitais>
     
+    <!-- Falta mostrar os regitos clinicos do mesmo paciente -->
     <registos_transferencias>
         <transferencia>
             <rt:cod_paciente>1</rt:cod_paciente>
