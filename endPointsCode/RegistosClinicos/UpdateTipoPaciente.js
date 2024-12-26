@@ -1,11 +1,8 @@
 exports = async function({query, headers, body }, response){
-    const collection = context.services
-            .get("mongodb-atlas")
-            .db("MedSync")
-            .collection("Pacientes");
-  
-    const pacientes = collection.find().toArray();
+    const collection = context.services.get("mongodb-atlas").db("MedSync").collection("Pacientes");
 
+    const pacientes = collection.find().toArray();
+  
     for (let i = 0; i < pacientes.length; i++) {
       const paciente = pacientes[i];
       let tipo_paciente;
@@ -19,7 +16,7 @@ exports = async function({query, headers, body }, response){
           if(Array.isArray(registo.Tratamentos)) {
             for (let k = 0; k < registo.Tratamentos.length && !cronico; k++) {
           
-              if (registo.Tratamentos[k].Realizado == "Sim") {
+              if (registo.Tratamentos[k].Realizado == "Não") {
                 cronico = true;
               }
             }
@@ -36,13 +33,13 @@ exports = async function({query, headers, body }, response){
         tipo_paciente = "Novo"
       }
 
-      if(paciente.Tipo_Paciente != tipo_paciente) {
+       if(paciente.Tipo_Paciente != tipo_paciente) {
         const result = await collection.updateOne(
           { ID_Paciente: paciente.ID_Paciente },
           { $set: { Tipo_Paciente: tipo_paciente } }
         );
       }
     }
-  
+
     return pacientes;
 };
