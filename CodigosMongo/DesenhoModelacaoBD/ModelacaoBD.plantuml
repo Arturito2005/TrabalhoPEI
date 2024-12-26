@@ -18,6 +18,7 @@ class Pacientes {
     - Email
     - Data_Registo
     - Array_Registos_Clinicos
+    - Array_Transferencias
 }
 
 class Profissionais {
@@ -62,12 +63,10 @@ class Transferencia {
     - Destino 
     - Tipo_Transferencia
     - Hospital_Destino 
-    -Array_RegistosClinicos
 }
 
 Transferencia "0..*" --- "1..1" Pacientes
 Transferencia "0..*" --- "1..1" Profissionais
-Transferencia "1..1" -- "0..*" RegistoClinico
 
 class Tratamento {
     - ID_Tratamento 

@@ -1,0 +1,66 @@
+[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        ID_Atendimento: 2
+      }
+  },
+  {
+    $group:
+      /**
+       * _id: The id of the group.
+       * fieldN: The first field name.
+       */
+      {
+        _id: "$ID_Atendimento",
+        ID_Atendimento: {
+          $first: "$ID_Atendimento"
+        },
+        ID_Paciente: {
+          $first: "$ID_Paciente"
+        },
+        ID_Profissional: {
+          $first: "$ID_Profissional"
+        },
+        Data_Atendimento: {
+          $first: "$Data_Atendimento"
+        },
+        Diagnosticos: {
+          $push: {
+            Tipo_Diagnostico: "$Tipo_Diagnostico",
+            Codigo_CID10: "$Codigo_CID10",
+            Descricao_Diagnostico:
+              "$Descricao_Diagnostico"
+          }
+        }
+      }
+  },
+  {
+    $project:
+      /**
+       * specifications: The fields to
+       *   include or exclude.
+       */
+      {
+        _id: 0,
+        ID_Atendimento: 1,
+        ID_Paciente: 1,
+        ID_Profissional: 1,
+        Data_Atendimento: 1,
+        Diagnosticos: 1
+      }
+  },
+  {
+    $out:
+      /**
+       * Provide the name of the output database and collection.
+       */
+      {
+        db: "TestTrabalhoPei",
+        coll: "ResgistosClinicos"
+      }
+  }
+]

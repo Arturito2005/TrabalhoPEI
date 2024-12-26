@@ -71,8 +71,10 @@
             
             <rc:id_medico>98765</rc:id_medico>
         </registo_clinico>
+        
     </lista_registos>
  
+    <!-- Retirar as especialidades debaixo do tot_atendimentos -->
     <resumo_mensal>
         <rm:tot_atendidos>380</rm:tot_atendidos>
         <rm:especialidades>
