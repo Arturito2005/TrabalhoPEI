@@ -19,7 +19,7 @@ exports = async function({query, headers, body }, response){
           if(Array.isArray(registo.Tratamentos)) {
             for (let k = 0; k < registo.Tratamentos.length && !cronico; k++) {
           
-              if (registo.Tratamentos[k].Realizado == "Sim") {
+              if (registo.Tratamentos[k].Realizado == "Não") {
                 cronico = true;
               }
             }
