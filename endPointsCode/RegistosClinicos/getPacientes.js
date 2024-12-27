@@ -1,9 +1,9 @@
 exports = async function(arg){
   try {
-    context.functions.execute("UpdateTipoPaciente", arg);
+    await context.functions.execute("UpdateContactosPacientes", arg);
 
-    context.functions.execute("UpdateContactosPacientes", arg);
-  
+    await context.functions.execute("UpdateTipoPaciente", arg);
+    
     const collection = context.services.get("mongodb-atlas").db("MedSync").collection("Pacientes");
     
     const pacientes = await collection.find({}, {_id: 0,
@@ -17,7 +17,10 @@ exports = async function(arg){
 
     return pacientes;
   } catch (error) {
-    console.error("Erro ao executar as funções:", error.message);
-    throw new Error("Erro ao executar as funções de atualização.");
+    return { 
+        status: 500, 
+        error: "Erro a consultar pelos pacientes.", 
+        details: error.message 
+    };
   }
 };
