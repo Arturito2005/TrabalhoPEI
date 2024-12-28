@@ -46,7 +46,7 @@
     
     <!-- Registos Clinicos -->
     <lista_registos>  
-        <registo_clinico>
+        <registo_clinico codigo_atend="1">
             <rc:data>2024-12-21T10:30:00</rc:data>
             <rc:especialidade_med>Cardiologia</rc:especialidade_med>
             
