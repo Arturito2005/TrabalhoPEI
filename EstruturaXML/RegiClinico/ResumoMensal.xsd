@@ -8,7 +8,6 @@
         <xs:sequence>
             <xs:sequence>
                 <xs:element name="tot_atendidos" type="totType"/>
-                <xs:element ref="especialidades"/>
                 <xs:element ref="genero" minOccurs="0" maxOccurs="2"/>
             </xs:sequence>
         </xs:sequence>
@@ -18,10 +17,10 @@
     <xs:element name="genero">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="faixa_etaria" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tot_tratamentos"/>
+                <xs:element ref="faixas_etarias"/>
             </xs:sequence>
-            
-            <xs:attribute name="id_gen" type="generoType"/>
+            <xs:attribute name="id_genero" type="generoType"/>
         </xs:complexType>
     </xs:element>
     
@@ -31,6 +30,16 @@
             <xs:enumeration value="F"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <xs:element name="tot_tratamentos" type="totType"/>
+    
+    <xs:element name="faixas_etarias">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="faixa_etaria" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <!-- Inicio do elemento para as faixas etarias, por genero -->
     <xs:element name="faixa_etaria">
