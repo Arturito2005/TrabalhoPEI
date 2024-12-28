@@ -1,5 +1,11 @@
 [
   {
+    $sort: {
+      ID_Atendimento: 1,
+      Tipo_Diagnostico: 1
+    }
+  },
+  {
     $group: {
       _id: "$ID_Atendimento",
       ID_Atendimento: {
@@ -25,23 +31,6 @@
     }
   },
   {
-    $sort: {
-      ID_Atendimento: 1
-    }
-  },
-  {
-    $addFields: {
-      Diagnosticos: {
-        $sortArray: {
-          input: "$Diagnosticos",
-          sortBy: {
-            Tipo_Diagnostico: 1
-          }
-        }
-      }
-    }
-  },
-  {
     $project: {
       _id: 0,
       ID_Atendimento: 1,
@@ -49,12 +38,6 @@
       ID_Profissional: 1,
       Data_Atendimento: 1,
       Diagnosticos: 1
-    }
-  },
-  {
-    $out: {
-      db: "TrabalhoPei",
-      coll: "RegistosClinicos"
     }
   }
 ]

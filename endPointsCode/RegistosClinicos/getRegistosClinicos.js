@@ -1,4 +1,4 @@
-exports = async function(arg) {
+exports = async function() {
   try {
     const collection = context.services.get("mongodb-atlas").db("MedSync").collection("AmostraRegistosClinicos");
       
@@ -11,6 +11,7 @@ exports = async function(arg) {
                                                         "Tratamentos.ID_Tratamento": 1,
                                                         "Tratamentos.Tipo_Tratamento": 1,
                                                         "Tratamentos.Realizado": 1,}).toArray();
+    
     return registosClinicos;
   } catch (error) {
       return { 

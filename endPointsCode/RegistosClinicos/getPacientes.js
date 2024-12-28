@@ -1,8 +1,8 @@
 exports = async function(arg){
   try {
-    await context.functions.execute("UpdateContactosPacientes", arg);
+    await context.functions.execute("updateContactosPacientes", arg);
 
-    await context.functions.execute("UpdateTipoPaciente", arg);
+    await context.functions.execute("updateTipoPaciente", arg);
     
     const collection = context.services.get("mongodb-atlas").db("MedSync").collection("Pacientes");
     

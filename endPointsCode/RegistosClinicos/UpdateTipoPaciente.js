@@ -1,4 +1,4 @@
-exports = async function({query, headers, body }, response){
+exports = async function(){
   try {
     const collection = context.services.get("mongodb-atlas").db("MedSync").collection("Pacientes");
 

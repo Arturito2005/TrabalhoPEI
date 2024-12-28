@@ -1,5 +1,8 @@
 [
   {
+    $limit: 10000
+  },
+  {
     $lookup: {
       from: "Profissionais",
       localField: "ID_Profissional",
@@ -36,8 +39,8 @@
   },
   {
     $out: {
-      db: "TrabalhoGrupo",
-      coll: "RegistosClinicos"
+      db: "MedSync",
+      coll: "AmostraRegistosClinicos"
     }
   }
 ]
