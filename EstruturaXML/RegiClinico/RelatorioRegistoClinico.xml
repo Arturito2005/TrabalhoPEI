@@ -8,15 +8,13 @@
     xmlns:rc="https://www.medsync.com/listaRegistoClinico" 
     xmlns:rm="https://www.medsync.com/ResumoMensalRegistosClinicos" 
     xmlns:d="https://www.medsync.com/Diagnostico" 
-    xmlns:tra="https://www.medsync.com/Tratamento">
-    
-    
+    xmlns:tra="https://www.medsync.com/Tratamento">    
     <hospital hg:id="1">
         <hg:nome>Hospital Geral</hg:nome>
         <hg:morada>Rua Saúde, 123</hg:morada>
         <h:mes>3</h:mes>
         <h:ano_fiscal>2023</h:ano_fiscal>
-    </hospital>    
+    </hospital>
     <lista_pacientes>
         <paciente id="211">
             <p:nome>Tyrone Rose</p:nome>
@@ -10871,6 +10869,11 @@
                     <rm:tot_cronicos>41</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>9</rm:tot_tratamentos>
+                            <rm:tot_cronicos>7</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
                             <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
                             <rm:tot_tratamentos>9</rm:tot_tratamentos>
                             <rm:tot_cronicos>6</rm:tot_cronicos>
@@ -10879,11 +10882,6 @@
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
                             <rm:tot_tratamentos>16</rm:tot_tratamentos>
                             <rm:tot_cronicos>11</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>9</rm:tot_tratamentos>
-                            <rm:tot_cronicos>7</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
@@ -10903,11 +10901,6 @@
                     <rm:tot_cronicos>66</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
-                            <rm:tot_tratamentos>19</rm:tot_tratamentos>
-                            <rm:tot_cronicos>16</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>11</rm:tot_tratamentos>
                             <rm:tot_cronicos>9</rm:tot_cronicos>
@@ -10918,14 +10911,19 @@
                             <rm:tot_cronicos>6</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>22</rm:tot_tratamentos>
-                            <rm:tot_cronicos>17</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
                             <rm:tot_tratamentos>22</rm:tot_tratamentos>
                             <rm:tot_cronicos>18</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
+                            <rm:tot_tratamentos>19</rm:tot_tratamentos>
+                            <rm:tot_cronicos>16</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>22</rm:tot_tratamentos>
+                            <rm:tot_cronicos>17</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -10935,14 +10933,9 @@
                     <rm:tot_cronicos>58</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>29</rm:tot_tratamentos>
-                            <rm:tot_cronicos>18</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>12</rm:tot_tratamentos>
-                            <rm:tot_cronicos>9</rm:tot_cronicos>
+                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
+                            <rm:tot_tratamentos>8</rm:tot_tratamentos>
+                            <rm:tot_cronicos>6</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
@@ -10955,9 +10948,14 @@
                             <rm:tot_cronicos>10</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
-                            <rm:tot_tratamentos>8</rm:tot_tratamentos>
-                            <rm:tot_cronicos>6</rm:tot_cronicos>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>29</rm:tot_tratamentos>
+                            <rm:tot_cronicos>18</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>12</rm:tot_tratamentos>
+                            <rm:tot_cronicos>9</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -10967,19 +10965,9 @@
                     <rm:tot_cronicos>97</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>13</rm:tot_tratamentos>
-                            <rm:tot_cronicos>11</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
                             <rm:tot_tratamentos>23</rm:tot_tratamentos>
                             <rm:tot_cronicos>18</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>42</rm:tot_tratamentos>
-                            <rm:tot_cronicos>38</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
@@ -10991,6 +10979,16 @@
                             <rm:tot_tratamentos>20</rm:tot_tratamentos>
                             <rm:tot_cronicos>18</rm:tot_cronicos>
                         </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>42</rm:tot_tratamentos>
+                            <rm:tot_cronicos>38</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>13</rm:tot_tratamentos>
+                            <rm:tot_cronicos>11</rm:tot_cronicos>
+                        </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
                 <rm:faixa_etaria>
@@ -10999,19 +10997,14 @@
                     <rm:tot_cronicos>97</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
-                            <rm:tot_tratamentos>20</rm:tot_tratamentos>
-                            <rm:tot_cronicos>19</rm:tot_cronicos>
+                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>16</rm:tot_tratamentos>
+                            <rm:tot_cronicos>13</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
                             <rm:tot_tratamentos>20</rm:tot_tratamentos>
                             <rm:tot_cronicos>16</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>16</rm:tot_tratamentos>
-                            <rm:tot_cronicos>13</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
@@ -11023,6 +11016,11 @@
                             <rm:tot_tratamentos>34</rm:tot_tratamentos>
                             <rm:tot_cronicos>31</rm:tot_cronicos>
                         </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
+                            <rm:tot_tratamentos>20</rm:tot_tratamentos>
+                            <rm:tot_cronicos>19</rm:tot_cronicos>
+                        </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
                 <rm:faixa_etaria>
@@ -11030,6 +11028,11 @@
                     <rm:tot_tratamentos>81</rm:tot_tratamentos>
                     <rm:tot_cronicos>71</rm:tot_cronicos>
                     <rm:especialidades>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
+                            <rm:tot_tratamentos>17</rm:tot_tratamentos>
+                            <rm:tot_cronicos>16</rm:tot_cronicos>
+                        </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>14</rm:tot_tratamentos>
@@ -11041,19 +11044,14 @@
                             <rm:tot_cronicos>23</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>13</rm:tot_tratamentos>
-                            <rm:tot_cronicos>11</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>13</rm:tot_tratamentos>
                             <rm:tot_cronicos>11</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
-                            <rm:tot_tratamentos>17</rm:tot_tratamentos>
-                            <rm:tot_cronicos>16</rm:tot_cronicos>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>13</rm:tot_tratamentos>
+                            <rm:tot_cronicos>11</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -11063,8 +11061,8 @@
                     <rm:tot_cronicos>28</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
-                            <rm:tot_tratamentos>4</rm:tot_tratamentos>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>7</rm:tot_tratamentos>
                             <rm:tot_cronicos>3</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
@@ -11073,18 +11071,18 @@
                             <rm:tot_cronicos>4</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>12</rm:tot_tratamentos>
-                            <rm:tot_cronicos>9</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>13</rm:tot_tratamentos>
                             <rm:tot_cronicos>9</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>7</rm:tot_tratamentos>
+                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>12</rm:tot_tratamentos>
+                            <rm:tot_cronicos>9</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
+                            <rm:tot_tratamentos>4</rm:tot_tratamentos>
                             <rm:tot_cronicos>3</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
@@ -11100,19 +11098,19 @@
                     <rm:tot_cronicos>54</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
+                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>8</rm:tot_tratamentos>
+                            <rm:tot_cronicos>6</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>17</rm:tot_tratamentos>
                             <rm:tot_cronicos>15</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>22</rm:tot_tratamentos>
-                            <rm:tot_cronicos>17</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>8</rm:tot_tratamentos>
-                            <rm:tot_cronicos>6</rm:tot_cronicos>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>9</rm:tot_tratamentos>
+                            <rm:tot_cronicos>8</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
@@ -11120,9 +11118,9 @@
                             <rm:tot_cronicos>8</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>9</rm:tot_tratamentos>
-                            <rm:tot_cronicos>8</rm:tot_cronicos>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>22</rm:tot_tratamentos>
+                            <rm:tot_cronicos>17</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -11137,11 +11135,6 @@
                             <rm:tot_cronicos>7</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>7</rm:tot_tratamentos>
-                            <rm:tot_cronicos>6</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
                             <rm:tot_tratamentos>19</rm:tot_tratamentos>
                             <rm:tot_cronicos>13</rm:tot_cronicos>
@@ -11150,6 +11143,11 @@
                             <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>15</rm:tot_tratamentos>
                             <rm:tot_cronicos>9</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>7</rm:tot_tratamentos>
+                            <rm:tot_cronicos>6</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
@@ -11164,9 +11162,9 @@
                     <rm:tot_cronicos>73</rm:tot_cronicos>
                     <rm:especialidades>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>15</rm:tot_tratamentos>
-                            <rm:tot_cronicos>13</rm:tot_cronicos>
+                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
+                            <rm:tot_tratamentos>10</rm:tot_tratamentos>
+                            <rm:tot_cronicos>8</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
@@ -11179,14 +11177,14 @@
                             <rm:tot_cronicos>16</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>15</rm:tot_tratamentos>
+                            <rm:tot_cronicos>13</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
                             <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
                             <rm:tot_tratamentos>22</rm:tot_tratamentos>
                             <rm:tot_cronicos>17</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
-                            <rm:tot_tratamentos>10</rm:tot_tratamentos>
-                            <rm:tot_cronicos>8</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -11206,6 +11204,11 @@
                             <rm:tot_cronicos>15</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>19</rm:tot_tratamentos>
+                            <rm:tot_cronicos>18</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
                             <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
                             <rm:tot_tratamentos>11</rm:tot_tratamentos>
                             <rm:tot_cronicos>10</rm:tot_cronicos>
@@ -11214,11 +11217,6 @@
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
                             <rm:tot_tratamentos>15</rm:tot_tratamentos>
                             <rm:tot_cronicos>10</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>19</rm:tot_tratamentos>
-                            <rm:tot_cronicos>18</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -11233,14 +11231,14 @@
                             <rm:tot_cronicos>11</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>38</rm:tot_tratamentos>
+                            <rm:tot_cronicos>33</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
                             <rm:tot_tratamentos>19</rm:tot_tratamentos>
                             <rm:tot_cronicos>9</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>33</rm:tot_tratamentos>
-                            <rm:tot_cronicos>22</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
@@ -11248,9 +11246,9 @@
                             <rm:tot_cronicos>17</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>38</rm:tot_tratamentos>
-                            <rm:tot_cronicos>33</rm:tot_cronicos>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>33</rm:tot_tratamentos>
+                            <rm:tot_cronicos>22</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -11259,11 +11257,6 @@
                     <rm:tot_tratamentos>98</rm:tot_tratamentos>
                     <rm:tot_cronicos>76</rm:tot_cronicos>
                     <rm:especialidades>
-                        <rm:especialidade>
-                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>26</rm:tot_tratamentos>
-                            <rm:tot_cronicos>19</rm:tot_cronicos>
-                        </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
                             <rm:tot_tratamentos>13</rm:tot_tratamentos>
@@ -11275,13 +11268,18 @@
                             <rm:tot_cronicos>15</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
+                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
+                            <rm:tot_tratamentos>25</rm:tot_tratamentos>
+                            <rm:tot_cronicos>19</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
                             <rm:nome_especialidade>Pediatra</rm:nome_especialidade>
                             <rm:tot_tratamentos>17</rm:tot_tratamentos>
                             <rm:tot_cronicos>15</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
-                            <rm:tot_tratamentos>25</rm:tot_tratamentos>
+                            <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>26</rm:tot_tratamentos>
                             <rm:tot_cronicos>19</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
@@ -11297,23 +11295,23 @@
                             <rm:tot_cronicos>10</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>12</rm:tot_tratamentos>
-                            <rm:tot_cronicos>9</rm:tot_cronicos>
-                        </rm:especialidade>
-                        <rm:especialidade>
                             <rm:nome_especialidade>Ortopedista</rm:nome_especialidade>
                             <rm:tot_tratamentos>8</rm:tot_tratamentos>
                             <rm:tot_cronicos>8</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
-                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
-                            <rm:tot_tratamentos>11</rm:tot_tratamentos>
-                            <rm:tot_cronicos>7</rm:tot_cronicos>
+                            <rm:nome_especialidade>Dermatologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>12</rm:tot_tratamentos>
+                            <rm:tot_cronicos>9</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Clínico Geral</rm:nome_especialidade>
                             <rm:tot_tratamentos>7</rm:tot_tratamentos>
+                            <rm:tot_cronicos>7</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Cardiologista</rm:nome_especialidade>
+                            <rm:tot_tratamentos>11</rm:tot_tratamentos>
                             <rm:tot_cronicos>7</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
