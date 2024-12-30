@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.Transferencias.com/ResumoMensal"
-    targetNamespace="https://www.Transferencias.com/ResumoMensal"
-    xmlns:vg="https://www.Transferencias.com/ValoresGerais"
+    xmlns="https://www.medsync.com/ResumoMensalTransferencias"
+    targetNamespace="https://www.medsync.com/ResumoMensalTransferencias"
+    xmlns:vg="https://www.medsync.com/ValoresGeraisTransferencias"
+    xmlns:h="https://www.medsync.com/infoGeralHospital"
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.Transferencias.com/ValoresGerais" 
+    <xs:import namespace="https://www.medsync.com/ValoresGeraisTransferencias" 
         schemaLocation="./ValoresGerais.xsd"/>
+    
+    <xs:import namespace="https://www.medsync.com/infoGeralHospital" 
+        schemaLocation="../XSDGerais/InfoGeralHospital.xsd"/>
     
     <xs:element name="tot_transferencias" type="tot_type"/>
     
@@ -41,8 +45,7 @@
     <xs:element name="motivos">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tot_transferencias"/>
-                <xs:element ref="motivo" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="motivo" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -64,8 +67,7 @@
     <xs:element name="tipos">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tot_transferencias"/>
-                <xs:element ref="tipo" minOccurs="0" maxOccurs="2"/>
+                <xs:element ref="tipo" minOccurs="1" maxOccurs="2"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -87,8 +89,7 @@
     <xs:element name="hospitais">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tot_transferencias"/>
-                <xs:element ref="hospital" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="hospital" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -97,11 +98,11 @@
     <xs:element name="hospital">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nome" type="nomeType"/>
+                <xs:element ref="h:nome"/>
                 <xs:element ref="tot_transferencias"/>
             </xs:sequence>
 
-        <xs:attribute name="id" type="idType"/>
+            <xs:attribute ref="h:id" use="required"/>
         </xs:complexType>
     </xs:element>
     <!-- Fim do elemento hospital -->

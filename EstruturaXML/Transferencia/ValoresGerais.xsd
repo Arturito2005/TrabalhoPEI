@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.Transferencias.com/ValoresGerais"
-    targetNamespace="https://www.Transferencias.com/ValoresGerais"
+    xmlns="https://www.medsync.com/ValoresGeraisTransferencias"
+    targetNamespace="https://www.medsync.com/ValoresGeraisTransferencias"
     elementFormDefault="qualified">
     
     <xs:simpleType name="tipoType">

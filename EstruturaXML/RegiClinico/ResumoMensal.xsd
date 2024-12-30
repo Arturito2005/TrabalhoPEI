@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.RegistoClinicos.com/ResumoMensal"
-    targetNamespace="https://www.RegistoClinicos.com/ResumoMensal"
+    xmlns="https://www.medsync.com/ResumoMensalRegistosClinicos"
+    targetNamespace="https://www.medsync.com/ResumoMensalRegistosClinicos"
     elementFormDefault="qualified">
     
     <xs:complexType name="resumoMensalType">
@@ -15,6 +15,7 @@
     
     <!-- Geral -->
     <xs:element name="tot_tratamentos" type="totType"/>
+    <xs:element name="tot_cronicos" type="totType"/>
     <!-- Fim Geral -->
     <!-- Inicio do elemento genero dos pacientes atendidos -->
     <xs:element name="genero">
@@ -23,7 +24,7 @@
                 <xs:element ref="tot_tratamentos"/>
                 <xs:element ref="faixas_etarias"/>
             </xs:sequence>
-            <xs:attribute name="id_genero" type="generoType"/>
+            <xs:attribute name="id_genero" type="generoType" use="required"/>
         </xs:complexType>
     </xs:element>
     
@@ -48,6 +49,7 @@
             <xs:sequence>
                 <xs:element name="idades" type="idadeType"/>
                 <xs:element ref="tot_tratamentos"/>
+                <xs:element ref="tot_cronicos"/>
                 <xs:element ref="especialidades" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -74,7 +76,7 @@
             <xs:sequence>
                 <xs:element name="nome_especialidade"/>
                 <xs:element ref="tot_tratamentos"/>
-                <xs:element name="tot_cronicos" type="totType"/>
+                <xs:element ref="tot_cronicos"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

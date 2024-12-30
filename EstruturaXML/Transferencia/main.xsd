@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="https://www.Transferencias.com/main"
-    targetNamespace="https://www.Transferencias.com/main"
-    xmlns:h="https://www.Transferencias.com/infoHospital"
-    xmlns:rt="https://www.Transferencias.com/Transferencia"
-    xmlns:rm="https://www.Transferencias.com/ResumoMensal"
+    xmlns="https://www.medsync.com/Transferencias/getRelatorioTransferencia"
+    targetNamespace="https://www.medsync.com/Transferencias/getRelatorioTransferencia"
+    xmlns:h="https://www.medsync.com/infoHospitalDestino" 
+    xmlns:rt="https:/www.medsync.com/listaTransferencia" 
+    xmlns:rm="https://www.medsync.com/ResumoMensalTransferencias" 
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.Transferencias.com/infoHospital" 
+    <xs:import namespace="https://www.medsync.com/infoHospitalDestino" 
         schemaLocation="./InfoHospital.xsd"/>
     
-    <xs:import namespace="https://www.Transferencias.com/Transferencia" 
+    <xs:import namespace="https:/www.medsync.com/listaTransferencia" 
         schemaLocation="./Transferencia.xsd"/>
     
-    <xs:import namespace="https://www.Transferencias.com/ResumoMensal" 
+    <xs:import namespace="https://www.medsync.com/ResumoMensalTransferencias" 
         schemaLocation="./ResumoMensal.xsd"/>
     
-    <xs:element name="transferencias">
+    <xs:element name="relatorio_transferencias">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="hospitais"/>
@@ -25,10 +25,11 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
     <xs:element name="hospitais">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="hopital" type="h:hospitalType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="hospital" type="h:hospitalType" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -36,7 +37,7 @@
     <xs:element name="lista_transferencias">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="transferencia" type="rt:transferenciaType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="transferencia" type="rt:transferenciaType" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

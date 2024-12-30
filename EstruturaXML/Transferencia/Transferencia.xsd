@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.Transferencias.com/Transferencia"
-    targetNamespace="https://www.Transferencias.com/Transferencia"
-    xmlns:t="https://www.XSDGeral.com/Tratamento"
-    xmlns:d="https://www.XSDGeral.com/Diagnostico"
+    xmlns="https:/www.medsync.com/listaTransferencia"
+    targetNamespace="https:/www.medsync.com/listaTransferencia"
+    xmlns:t="https://www.medsync.com/Tratamento"
+    xmlns:d="https://www.medsync.com/Diagnostico"
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.XSDGeral.com/Tratamento" 
+    <xs:import namespace="https://www.medsync.com/Tratamento" 
         schemaLocation="../XSDGerais/Tratamentos.xsd"/>
     
-    <xs:import namespace="https://www.XSDGeral.com/Diagnostico" 
+    <xs:import namespace="https://www.medsync.com/Diagnostico" 
         schemaLocation="../XSDGerais/Diagnosticos.xsd"/>
 
     <!-- Inicio elemento transferencia -->
     <xs:complexType name="transferenciaType"> 
         <xs:sequence>
             <xs:element name="cod_paciente" type="idType"/>
-            <xs:element name="data_transferecia" type="xs:date"/>
+            <xs:element name="data_transferencia" type="xs:dateTime"/>
             <xs:element name="motivo" type="motivoType"/>
             <xs:element name="tipo_transferencia" type="tipoTransferenciaType"/>
             <xs:element ref="relatorios_medico" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         
-        <xs:attribute name="id" type="idType"/>
+        <xs:attribute name="id" type="idType" use="required"/>
     </xs:complexType>     
     
     <xs:simpleType name="tipoTransferenciaType">
@@ -73,7 +73,7 @@
                 <xs:element ref="t:tratamentos" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
         
-        <xs:attribute name="id" type="idType"/>
+            <xs:attribute name="id" type="idType" use="required"/>
         </xs:complexType>
         
     </xs:element>

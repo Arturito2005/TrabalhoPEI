@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.XSDGeral.com/Tratamento"
-    targetNamespace="https://www.XSDGeral.com/Tratamento"
+    xmlns="https://www.medsync.com/Tratamento"
+    targetNamespace="https://www.medsync.com/Tratamento"
     elementFormDefault="qualified">
     
     <xs:element name="tratamentos">
@@ -19,7 +19,7 @@
                 <xs:element name="tipo" type="tipoTratamentoType"/>
             </xs:sequence>
             
-            <xs:attribute name="cod_tratamento" type="idType"/>  
+            <xs:attribute name="cod_tratamento" type="idType" use="required"/>  
         </xs:complexType>
     </xs:element>
 

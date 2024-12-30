@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.RegistoClinicos.com/infoHospital"
-    targetNamespace="https://www.RegistoClinicos.com/infoHospital"
-    xmlns:h="https://www.XSDGeral.com/infoGeralHospital"
+    xmlns="https://www.medsync.com/infoHospital"
+    targetNamespace="https://www.medsync.com/infoHospital"
+    xmlns:h="https://www.medsync.com/infoGeralHospital"
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.XSDGeral.com/infoGeralHospital" 
+    <xs:import namespace="https://www.medsync.com/infoGeralHospital" 
         schemaLocation="../XSDGerais/InfoGeralHospital.xsd"/>
     
     <xs:complexType name="hospitalType">
@@ -16,7 +16,7 @@
             <xs:element name="ano_fiscal" type="ano_fiscType"/>
         </xs:sequence>
         
-        <xs:attribute ref="h:id"/>
+        <xs:attribute ref="h:id" use="required"/>
     </xs:complexType>    
     
     <xs:simpleType name="mesType">

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="https://www.RegistoClinicos.com/registoClinico"
-    targetNamespace="https://www.RegistoClinicos.com/registoClinico"
-    xmlns:t="https://www.XSDGeral.com/Tratamento"
-    xmlns:d="https://www.XSDGeral.com/Diagnostico"
+    xmlns="https://www.medsync.com/listaRegistoClinico"
+    targetNamespace="https://www.medsync.com/listaRegistoClinico"
+    xmlns:t="https://www.medsync.com/Tratamento"
+    xmlns:d="https://www.medsync.com/Diagnostico"
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.XSDGeral.com/Tratamento" 
+    <xs:import namespace="https://www.medsync.com/Tratamento" 
         schemaLocation="../XSDGerais/Tratamentos.xsd"/>
     
-    <xs:import namespace="https://www.XSDGeral.com/Diagnostico" 
+    <xs:import namespace="https://www.medsync.com/Diagnostico" 
         schemaLocation="../XSDGerais/Diagnosticos.xsd"/>
     
     <xs:complexType name="registoClinicoType">
@@ -17,11 +17,11 @@
             <xs:element name="data" type="xs:dateTime"/>
             <xs:element name="id_medico" type="idType"/>
             <xs:element name="especialidade_med" type="especialidadeType"/>
-            <xs:element ref="d:diagnosticos"/>
-            <xs:element ref="t:tratamentos"/>
+            <xs:element ref="d:diagnosticos" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="t:tratamentos" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         
-        <xs:attribute name="codigo_atend" type="idType"/>  
+        <xs:attribute name="codigo_atend" type="idType" use="required"/>  
     </xs:complexType>
     
     <xs:simpleType name="idType">
