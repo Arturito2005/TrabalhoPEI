@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.Transferencias.com/infoHospital"
-    targetNamespace="https://www.Transferencias.com/infoHospital"
-    xmlns:h="https://www.XSDGeral.com/infoGeralHospital"
+    xmlns="https://www.medsync.com/infoHospitalDestino"
+    targetNamespace="https://www.medsync.com/infoHospitalDestino"
+    xmlns:h="https://www.medsync.com/infoGeralHospital"
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.XSDGeral.com/infoGeralHospital" 
+    <xs:import namespace="https://www.medsync.com/infoGeralHospital" 
         schemaLocation="../XSDGerais/InfoGeralHospital.xsd"/>
     
     <xs:complexType name="hospitalType">
         <xs:sequence>
             <xs:element ref="h:nome"/>
-            <xs:element ref="h:morada"/>
+            <xs:element ref="h:morada" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         
-        <xs:attribute ref="h:id"/>
+        <xs:attribute ref="h:id" use="required"/>
     </xs:complexType>    
 
 </xs:schema>

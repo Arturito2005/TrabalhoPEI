@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns="https://www.RegistoClinicos.com/main"
-    targetNamespace="https://www.RegistoClinicos.com/main"
+    xmlns="https://www.medsync.com/RegistosClinicos/getRelatorioRegistosClinicos"
+    targetNamespace="https://www.medsync.com/RegistosClinicos/getRelatorioRegistosClinicos"
     
-    xmlns:h="https://www.RegistoClinicos.com/infoHospital"
-    xmlns:p="https://www.RegistoClinicos.com/listaPacientes"
-    xmlns:rc="https://www.RegistoClinicos.com/registoClinico"
-    xmlns:rm="https://www.RegistoClinicos.com/ResumoMensal"
+    xmlns:h="https://www.medsync.com/infoHospital"
+    xmlns:p="https://www.medsync.com/listaPacientes"
+    xmlns:rc="https://www.medsync.com/listaRegistoClinico" 
+    xmlns:rm="https://www.medsync.com/ResumoMensalRegistosClinicos" 
     elementFormDefault="qualified">
     
-    <xs:import namespace="https://www.RegistoClinicos.com/infoHospital" 
+    <xs:import namespace="https://www.medsync.com/infoHospital" 
         schemaLocation="./InfoHospitalRegisto.xsd"/>
     
-    <xs:import namespace="https://www.RegistoClinicos.com/listaPacientes" 
+    <xs:import namespace="https://www.medsync.com/listaPacientes" 
         schemaLocation="./PacientesAtendidos.xsd"/>
     
-    <xs:import namespace="https://www.RegistoClinicos.com/registoClinico" 
+    <xs:import namespace="https://www.medsync.com/listaRegistoClinico" 
         schemaLocation="./RegistoClinico.xsd"/>
     
-    <xs:import namespace="https://www.RegistoClinicos.com/ResumoMensal" 
+    <xs:import namespace="https://www.medsync.com/ResumoMensalRegistosClinicos" 
         schemaLocation="./ResumoMensal.xsd"/>
     
     <xs:element name="relatorio_clinico">
