@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "bcf9dcc2-4290-4ff8-b07d-e0829f287d71",
+		"name": "RegistosClinicos",
+		"description": "Este package contêm todos os get e put, necessarios para o Relatorio dos RegistosClinicos, organizados nas pastas:\n\n- Get;\n    \n- Put",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40137420",
+		"_collection_link": "https://grupo1-2125.postman.co/workspace/a87be11f-bdbb-4fc6-8dc3-3fb99d4a9bc6/collection/40137420-bcf9dcc2-4290-4ff8-b07d-e0829f287d71?action=share&source=collection_link&creator=40137420"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "GetPacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getPacientes?mes=6&ano=2020",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"getPacientes"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "6",
+									"description": "Mes de registo dos pacientes"
+								},
+								{
+									"key": "ano",
+									"value": "2020",
+									"description": "Ano de registo dos pacientes"
+								}
+							]
+						},
+						"description": "Vai buscar todos os pacientes, registados num determinado mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetRegistosClinicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getRegistosClinicos?mes=12&ano=1975",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"getRegistosClinicos"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "12",
+									"description": "Mes dos Registos Clinicos a consultar"
+								},
+								{
+									"key": "ano",
+									"value": "1975",
+									"description": "Ano dos Registos Clinicos a consutlar"
+								}
+							]
+						},
+						"description": "Vai buscar todos os registos clincios de um determinado mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetRelatorioRegistosClinicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getRelatorioRegistosClinicos?mes=12&ano=1975",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"getRelatorioRegistosClinicos"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "12",
+									"description": "Mes do relatorio do resumo Mensal dos Registos Clinicos"
+								},
+								{
+									"key": "ano",
+									"value": "1975",
+									"description": "Anodo relatorio do resumo Mensal dos Registos Clinicos"
+								}
+							]
+						},
+						"description": "Vai buscar o relatorio dos registos clinicos de um determinado mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetResumoMensalRegistosClinicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getResumoMensalRegistosClinicos?mes=10&ano=2024",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"getResumoMensalRegistosClinicos"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "10",
+									"description": "Mês do resumo mesnal do registo Clinico"
+								},
+								{
+									"key": "ano",
+									"value": "2024",
+									"description": "Ano do reumo mensal do registo Clinico"
+								}
+							]
+						},
+						"description": "Vai buscar o Resumo Mnesal dos Registos Clinicos, de um determinado mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetResumoMensalRegistosClinicosPorGenero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getResumoMensalRegistosClinicosPorGenero?gen=M&ano=2024&mes=10&faixa=10-20&ano_min=2010&ano_max=2020",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"getResumoMensalRegistosClinicosPorGenero"
+							],
+							"query": [
+								{
+									"key": "gen",
+									"value": "M",
+									"description": "Genero"
+								},
+								{
+									"key": "ano",
+									"value": "2024",
+									"description": "Ano do relatorio de Relatorio de Registos Clinicos, do reumo Mensal"
+								},
+								{
+									"key": "mes",
+									"value": "10",
+									"description": "Mes do relatorio de Relatorio de Reumo Mensal de Registos Clinicos"
+								},
+								{
+									"key": "faixa",
+									"value": "10-20",
+									"description": "Faixa Etaria a realziar a pesqusia"
+								},
+								{
+									"key": "ano_min",
+									"value": "2010",
+									"description": "Ano minimo da data de nasciemnto do pacinete mais novo"
+								},
+								{
+									"key": "ano_max",
+									"value": "2020",
+									"description": "Ano máximo da data de nascimento do paciente mais velho"
+								}
+							]
+						},
+						"description": "Vai buscar o resumo mensal dos registos Clinicos, para uma determinada faixa_etaria, com base no genero indicado (M ou F), ano e mês do resumo mensal, a faixa etária, o ano de nascimento do paciente mais novo e o ano de nascimento do paciente mais velho."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta pasta contêm todos os getters necessarios para realizar o relatorio de registos clinicos sendo eles:\n\n- GetRegistosClinicos;\n    \n- GetPacientes;\n    \n- GetReltarioRegistosClinicos;\n    \n- GetResumoMensalRegistosClinicosPorGenero;\n    \n- GetResumoMensalRegistosClinicos."
+		},
+		{
+			"name": "Put",
+			"item": [
+				{
+					"name": "UpdateContactosPacientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/updateContactosPacientes?ano=1968&mes=11",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"updateContactosPacientes"
+							],
+							"query": [
+								{
+									"key": "ano",
+									"value": "1968",
+									"description": "Ano de nascimento dos pacientes, cujo os campos Telefone e email vão ser atualizados para \"não fornecido\", caso eles não tenham nenhum telefone ou email"
+								},
+								{
+									"key": "mes",
+									"value": "11",
+									"description": "Mês de nascimento dos pacientes, cujo os campos Telefone e email vão ser atualizados para \"não fornecido\", caso eles não tenham nenhum telefone ou email"
+								}
+							]
+						},
+						"description": "Atualiza o campo email e/ou telefone dos pacientes, caso o mesmo não possua um email ou telefone associado à sua contacto, onde o valor do(s) campo(s) passam a ser \"não fornecido\"."
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTipoPacientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/updateTipoPaciente?mes=4&ano=1988",
+							"protocol": "https",
+							"host": [
+								"eu-west-2",
+								"aws",
+								"data",
+								"mongodb-api",
+								"com"
+							],
+							"path": [
+								"app",
+								"medsync_api-jqjjbuy",
+								"endpoint",
+								"updateTipoPaciente"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "4",
+									"description": "Mes de nascimentos dos pacientes que vai ser atualizado o seu tipo"
+								},
+								{
+									"key": "ano",
+									"value": "1988",
+									"description": "Ano de nasciemento dos pacientes que vão ser atualizado o seu tipo"
+								}
+							]
+						},
+						"description": "Este put atualiza o campo \"tipo_paciente\" dos pacientes, onde caso o paciente tenha o seu 1º atendimento ou nenhum ele é considerado um paciente \"Novo\", caso ele tenha pelo menos um atendimento a pelo menos 5 anos, passa a ser \"Regular\" e caso ele tenha alguma condição crónica passa a ser \"Crónico\"."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta pasta armazena os puts, que permitem atualizar os dados do paciente, sendo eles:\n\n- UpdateContactosPacientes;\n    \n- UpdateTipoPacientes."
+		}
+	]
+}

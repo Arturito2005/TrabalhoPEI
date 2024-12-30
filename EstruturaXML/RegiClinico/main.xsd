@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns="https://www.medsync.com/RegistosClinicos/getRelatorioRegistosClinicos"
-    targetNamespace="https://www.medsync.com/RegistosClinicos/getRelatorioRegistosClinicos"
-    
+    targetNamespace="https://www.medsync.com/RegistosClinicos/getRelatorioRegistosClinicos" 
     xmlns:h="https://www.medsync.com/infoHospital"
     xmlns:p="https://www.medsync.com/listaPacientes"
     xmlns:rc="https://www.medsync.com/listaRegistoClinico" 
