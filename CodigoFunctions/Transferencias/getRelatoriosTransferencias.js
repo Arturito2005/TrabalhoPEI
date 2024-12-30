@@ -21,8 +21,8 @@ exports = async function(request, response){
     
     const RelatorioTransferencias = {
         hospitais: await context.functions.execute("getHospitaisTransferencia"),
-        registos_transferencias: await context.functions.execute("getTransferencias"),
-        resumo_mensal: await context.functions.execute("GetTransferenciasYearMonth",request, response)    
+        registos_transferencias: await context.functions.execute("getTransferencias",request, response),
+        resumo_mensal: await context.functions.execute("getResumoMensalTransferencias",request, response)    
     }
 
     return RelatorioTransferencias;
