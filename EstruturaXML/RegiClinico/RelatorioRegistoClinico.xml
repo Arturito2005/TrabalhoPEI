@@ -20,7 +20,7 @@
     </hospital>
     
     <!-- Lista de pacientes -->
-    <lista_paciente>
+    <lista_pacientes>
         <paciente id="12345">
             <p:nome>João Silva</p:nome>
             <p:data_nascimento>1985-07-22</p:data_nascimento>
@@ -42,12 +42,13 @@
             </p:contacto>
             <p:tipo_paciente>Regular</p:tipo_paciente>
         </paciente>
-    </lista_paciente>
+    </lista_pacientes>
     
     <!-- Registos Clinicos -->
     <lista_registos>  
         <registo_clinico codigo_atend="1">
             <rc:data>2024-12-21T10:30:00</rc:data>
+            <rc:id_medico>98765</rc:id_medico>
             <rc:especialidade_med>Cardiologia</rc:especialidade_med>
             
             <d:diagnosticos>
@@ -70,10 +71,7 @@
                     <tra:tipo>Recomendações sobre dieta e exercício físico</tra:tipo>
                 </tra:tratamento>
             </tra:tratamentos>
-            
-            <rc:id_medico>98765</rc:id_medico>
         </registo_clinico>
-        
     </lista_registos>
  
     <!-- Resumo Mensal -->
@@ -84,29 +82,29 @@
             <rm:faixas_etarias>
                 <rm:faixa_etaria>
                     <rm:idades>0-18</rm:idades>
-                    <rm:tot_atendidos>80</rm:tot_atendidos>
+                    <rm:tot_tratamentos>80</rm:tot_tratamentos>
                     <rm:especialidades>
                         <rm:especialidade>
                             <rm:nome_especialidade>Cardiologia</rm:nome_especialidade>
-                            <rm:tot_tramentos>50</rm:tot_tramentos>
-                            <rm:tot_condicoes_cronicas>10</rm:tot_condicoes_cronicas>
+                            <rm:tot_tratamentos>50</rm:tot_tratamentos>
+                            <rm:tot_cronicos>10</rm:tot_cronicos>
                         </rm:especialidade>
                         <rm:especialidade>
                             <rm:nome_especialidade>Ortopedia</rm:nome_especialidade>
-                            <rm:tot_tramentos>30</rm:tot_tramentos>
-                            <rm:tot_condicoes_cronicas>5</rm:tot_condicoes_cronicas>
+                            <rm:tot_tratamentos>30</rm:tot_tratamentos>
+                            <rm:tot_cronicos>5</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
                 
                 <rm:faixa_etaria>
                     <rm:idades>19-45</rm:idades>
-                    <rm:tot_atendidos>60</rm:tot_atendidos>
+                    <rm:tot_tratamentos>60</rm:tot_tratamentos>
                     <rm:especialidades>
                         <rm:especialidade>
                             <rm:nome_especialidade>Neurologia</rm:nome_especialidade>
-                            <rm:tot_tramentos>60</rm:tot_tramentos>
-                            <rm:tot_condicoes_cronicas>20</rm:tot_condicoes_cronicas>
+                            <rm:tot_tratamentos>60</rm:tot_tratamentos>
+                            <rm:tot_cronicos>20</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
@@ -118,24 +116,24 @@
             <rm:faixas_etarias>
                 <rm:faixa_etaria>
                     <rm:idades>0-18</rm:idades>
-                    <rm:tot_atendidos>110</rm:tot_atendidos>
+                    <rm:tot_tratamentos>110</rm:tot_tratamentos>
                     <rm:especialidades>
                         <rm:especialidade>
                             <rm:nome_especialidade>Pediatria</rm:nome_especialidade>
-                            <rm:tot_tramentos>40</rm:tot_tramentos>
-                            <rm:tot_condicoes_cronicas>8</rm:tot_condicoes_cronicas>
+                            <rm:tot_tratamentos>40</rm:tot_tratamentos>
+                            <rm:tot_cronicos>8</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>
                 
                 <rm:faixa_etaria>
                     <rm:idades>46-70</rm:idades>
-                    <rm:tot_atendidos>130</rm:tot_atendidos>
+                    <rm:tot_tratamentos>130</rm:tot_tratamentos>
                     <rm:especialidades>
                         <rm:especialidade>
                             <rm:nome_especialidade>Ginecologia</rm:nome_especialidade>
-                            <rm:tot_tramentos>50</rm:tot_tramentos>
-                            <rm:tot_condicoes_cronicas>18</rm:tot_condicoes_cronicas>
+                            <rm:tot_tratamentos>50</rm:tot_tratamentos>
+                            <rm:tot_cronicos>18</rm:tot_cronicos>
                         </rm:especialidade>
                     </rm:especialidades>
                 </rm:faixa_etaria>

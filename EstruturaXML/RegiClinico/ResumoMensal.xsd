@@ -13,6 +13,9 @@
         </xs:sequence>
     </xs:complexType>
     
+    <!-- Geral -->
+    <xs:element name="tot_tratamentos" type="totType"/>
+    <!-- Fim Geral -->
     <!-- Inicio do elemento genero dos pacientes atendidos -->
     <xs:element name="genero">
         <xs:complexType>
@@ -31,8 +34,6 @@
         </xs:restriction>
     </xs:simpleType>
     
-    <xs:element name="tot_tratamentos" type="totType"/>
-    
     <xs:element name="faixas_etarias">
         <xs:complexType>
             <xs:sequence>
@@ -46,7 +47,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="idades" type="idadeType"/>
-                <xs:element name="tot_atendidos" type="totType"/>
+                <xs:element ref="tot_tratamentos"/>
                 <xs:element ref="especialidades" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -72,8 +73,8 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="nome_especialidade"/>
-                <xs:element name="tot_tramentos" type="totType"/>
-                <xs:element name="tot_condicoes_cronicas" type="totType"/>
+                <xs:element ref="tot_tratamentos"/>
+                <xs:element name="tot_cronicos" type="totType"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -11,39 +11,39 @@
     xmlns:d="https://www.XSDGeral.com/Diagnostico">
 
     <hospitais>
-        <origem hg:id="12">
-            <hg:nome>Hospital Geral</hg:nome>
-            <hg:morada>Rua Saúde, 123</hg:morada>
-        </origem>
-        
-        <destino hg:id="13">
+        <hopital hg:id="13">
             <hg:nome>Hospital Santa Maria</hg:nome>
             <hg:morada>Rua Exemplo, 124</hg:morada>
-        </destino>
+        </hopital>
     </hospitais>
     
     <!-- Falta mostrar os regitos clinicos do mesmo paciente -->
-    <registos_transferencias>
-        <transferencia>
+    <lista_transferencias>
+        <transferencia id="4826">
             <rt:cod_paciente>1</rt:cod_paciente>
             <rt:data_transferecia>2024-07-22</rt:data_transferecia>
             <rt:motivo>Consulta de segunda opinião</rt:motivo>
-            <rt:relatorio_medico>
-                <d:diagnosticos>
-                    <d:diagnostico Codigo_CID10="G40">
-                        <d:tipo_diagnostico>Principal</d:tipo_diagnostico>
-                        <d:descricao>Epilepsia</d:descricao>
-                    </d:diagnostico>
-                </d:diagnosticos>
-                
-                <tra:tratamentos>
-                    <tra:tratamento cod_tratamento="1">
-                        <tra:tipo>Paracetamol 1g</tra:tipo>
-                    </tra:tratamento >
-                </tra:tratamentos>
-            </rt:relatorio_medico>
+            <rt:tipo_transferencia>Eletiva</rt:tipo_transferencia>
+            <rt:relatorios_medico>
+                <rt:relatorio_medico id="1">
+                    <rt:id_profissional>1</rt:id_profissional>
+                    <rt:especialidade>Ortopedista</rt:especialidade>
+                    <rt:data_atendimento>2024-10-17T00:00:00Z</rt:data_atendimento>
+                    <d:diagnosticos>
+                        <d:diagnostico Codigo_CID10="G40">
+                            <d:tipo_diagnostico>Principal</d:tipo_diagnostico>
+                            <d:descricao>Epilepsia</d:descricao>
+                        </d:diagnostico>
+                    </d:diagnosticos>
+                    <tra:tratamentos>
+                        <tra:tratamento cod_tratamento="1">
+                            <tra:tipo>Paracetamol 1g</tra:tipo>
+                        </tra:tratamento>
+                    </tra:tratamentos>
+                </rt:relatorio_medico>
+            </rt:relatorios_medico>
         </transferencia>
-    </registos_transferencias>
+    </lista_transferencias>
     
     <resumo_mensal>
         <rm:tot_transferencias>12</rm:tot_transferencias>

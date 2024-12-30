@@ -20,22 +20,20 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="hospitais"/>
-                <xs:element ref="registos_transferencias"/>
+                <xs:element ref="lista_transferencias"/>
                 <xs:element name="resumo_mensal" type="rm:resumoMensalType"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
     <xs:element name="hospitais">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="origem" type="h:hospitalType"/>
-                <xs:element name="destino" type="h:hospitalType"/>
+                <xs:element name="hopital" type="h:hospitalType" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
     
-    <xs:element name="registos_transferencias">
+    <xs:element name="lista_transferencias">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="transferencia" type="rt:transferenciaType" minOccurs="0" maxOccurs="unbounded"/>

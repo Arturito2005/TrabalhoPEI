@@ -25,14 +25,14 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="hospital" type="h:hospitalType"/>
-                <xs:element ref="lista_paciente"/>
+                <xs:element ref="lista_pacientes"/>
                 <xs:element ref="lista_registos"/>
                 <xs:element name="resumo_mensal" type="rm:resumoMensalType"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
     
-    <xs:element name="lista_paciente">
+    <xs:element name="lista_pacientes">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="paciente" type="p:pacienteType" minOccurs="0" maxOccurs="unbounded"/>

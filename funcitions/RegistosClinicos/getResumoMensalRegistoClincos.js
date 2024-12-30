@@ -23,18 +23,15 @@ exports = async function(request, response){
           genero: "F",
           tot_atendimento: 0,
           tot_tratamentos: 0,
-          faixa_etaria: []
+          faixas_etarias: []
       }
 
       const Genero_M = {
           genero: "M",
           tot_atendimento: 0,
           tot_tratamentos: 0,
-          faixa_etaria: []
+          faixas_etarias: []
       }
-
-      let cont_M = 0;
-      let cont_F = 0;
     
       for (let i = 0; i < 12; i++) {
           const idade_min = 10 * i;
@@ -54,7 +51,7 @@ exports = async function(request, response){
                                                                       }});
 
           if (faixa_etaria_M && faixa_etaria_M.length > 0) {
-            Genero_M.faixa_etaria[cont_M++] = faixa_etaria_M;
+            Genero_M.faixas_etarias.push(...faixa_etaria_M);
           }
 
           const faixa_etaria_F = await context.functions.execute("getResumoMensalRegistosClinicosPorGenero", {
@@ -67,22 +64,18 @@ exports = async function(request, response){
                                                                         ano_max: ano_max
                                                                       }});
           if (faixa_etaria_F && faixa_etaria_F.length > 0) {
-            Genero_F.faixa_etaria[cont_F++] = faixa_etaria_F;
+            Genero_F.faixas_etarias.push(...faixa_etaria_F);
           }
       }
 
-      Genero_M.faixa_etaria.forEach(faixa => {
-        faixa.forEach(faixaItem => {
-          Genero_M.tot_tratamentos += faixaItem.Total_Tratamentos;
-          Genero_M.tot_atendimento += faixaItem.Total_Atendimentos;
-        });
+      Genero_M.faixas_etarias.forEach(faixaItem => {
+              Genero_M.tot_tratamentos += faixaItem.Total_Tratamentos;
+              Genero_M.tot_atendimento += faixaItem.Total_Atendimentos;
       });
   
-      Genero_F.faixa_etaria.forEach(faixa => {
-        faixa.forEach(faixaItem => {
-          Genero_F.tot_tratamentos += faixaItem.Total_Tratamentos;
-          Genero_F.tot_atendimento += faixaItem.Total_Atendimentos;
-        });
+      Genero_F.faixas_etarias.forEach(faixaItem => {
+              Genero_F.tot_tratamentos += faixaItem.Total_Tratamentos;
+              Genero_F.tot_atendimento += faixaItem.Total_Atendimentos;
       });
       const ResumoMensal ={
           Total_Atendimento: 0,

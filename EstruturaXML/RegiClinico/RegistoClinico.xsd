@@ -15,10 +15,10 @@
     <xs:complexType name="registoClinicoType">
         <xs:sequence>
             <xs:element name="data" type="xs:dateTime"/>
+            <xs:element name="id_medico" type="idType"/>
             <xs:element name="especialidade_med" type="especialidadeType"/>
             <xs:element ref="d:diagnosticos"/>
             <xs:element ref="t:tratamentos"/>
-            <xs:element name="id_medico" type="idType"/>
         </xs:sequence>
         
         <xs:attribute name="codigo_atend" type="idType"/>  
