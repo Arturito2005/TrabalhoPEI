@@ -32,7 +32,6 @@ declare
        namespace tra {"https://www.medsync.com/Tratamento"},
        namespace d {"https://www.medsync.com/Diagnostico"},
        
-      if( $relatorio/hospitais) then
         element hospitais {
           for $hospital in $relatorio/hospitais/_        
           return element hospital {
@@ -41,7 +40,6 @@ declare
           }        
         },
 
-      if($relatorio/registos__transferencias) then
         element lista_transferencias {
           for $transferencia in $relatorio/registos__transferencias/_
           return element transferencia {
