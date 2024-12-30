@@ -101,8 +101,6 @@
                 <xs:element ref="h:nome"/>
                 <xs:element ref="tot_transferencias"/>
             </xs:sequence>
-
-            <xs:attribute ref="h:id" use="required"/>
         </xs:complexType>
     </xs:element>
     <!-- Fim do elemento hospital -->

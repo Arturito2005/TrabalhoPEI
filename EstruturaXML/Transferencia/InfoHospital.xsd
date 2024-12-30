@@ -11,7 +11,6 @@
     <xs:complexType name="hospitalType">
         <xs:sequence>
             <xs:element ref="h:nome"/>
-            <xs:element ref="h:morada" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         
         <xs:attribute ref="h:id" use="required"/>
