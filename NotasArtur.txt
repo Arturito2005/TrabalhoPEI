@@ -1,3 +1,0 @@
-Pode ser interessante nos Pacientes meter um index, no ID_RegistoClinico e talvez no ID_Medico, das Transferencias e dos RegistosClinicos, que assim pode otimizar as pesquisas. Se não otimizar retirar.
-
-Não sei porquê, talvez por não terem todos registos clínicos, não dá para meter um Index nos Registos Clinicos do Paciente

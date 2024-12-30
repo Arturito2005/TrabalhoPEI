@@ -49,9 +49,9 @@ declare
             element rt:motivo { $transferencia/Motivo/text()},
             element rt:tipo_transferencia { $transferencia/Tipo__Transferencia/text()},
             
-            if( $transferencia/RegistoClinicos) then 
+            if( $transferencia/RelatorioMedico) then 
                 element rt:relatorios_medicos {
-                  for $relatorio_med in $transferencia/RegistoClinicos/_ 
+                  for $relatorio_med in $transferencia/RelatorioMedico/_ 
                   return element rt:relatorio_medico {
                       attribute id { $relatorio_med/ID__Atendimento},
                       element rt:id_profissional { $relatorio_med/ID__Profissional/text()},
