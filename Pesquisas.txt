@@ -1,0 +1,26 @@
+Pesquisas a realizar, no MongoAPI:
+Ter em consideração a informação a mostrar tendo sempre em conta, o formato dos XMLs
+
+Para o XML Registo Clinico:
+	
+	- Lista de Pacientes (Estas sub-pesquisas são todas feitas na pesquisa lista de 	paciente, no final é feito o project dessa informação):
+		- Pesquisar pelos campos nome, data de nascimento, gênero e ID_Paciente
+		- Contactos (pesquisar pelo o telefone e email do cliente e caso não 			exista meter "não fornecido")
+		- Tipo de paciente (Meter "Novo", quando só tiver um atendimento, 			"Regular", quando tem foi atendido nos ultimos 5 anos, "Crónico", ainda 		não sei)
+
+	- Registos Clinicos: 
+		- Mostrar o codigo de atendimento, data e hora, especialidade médica e 			id_medico;
+		- Mostrar também os Diagnosticos principais e secundários;
+		- Mostrar todos os tratamentos:
+
+	- Resumo Mensal: Mostrar a informação pedida de acordo com o formato do xml, se 	for preciso mudar a estrutura depois avisar.
+
+Para o XML de Transferencias: 
+	- Informação do Hospital:
+		- Mostar o codigo, nome e morada para o hospital de origem (esses campos 		temos de ser nós a inventar) e os mesmos campos para o de destino (para 		esse só inventamos a morada e o codigo)
+	
+	- Registo de Transeferencias
+		- Mostar o ID de transferencia, data de transferencia, motivo e o tipo de 		transferência;
+		-Mostrar Relatorios Medicos associados, ou seja, registos clincios, 			incluindo diagnosticos prévios e tratamentos realizados antes da 			transferencia
+
+	- Resumo Mensal: Usar estrutura do XML

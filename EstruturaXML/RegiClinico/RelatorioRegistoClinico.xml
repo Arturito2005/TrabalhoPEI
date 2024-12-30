@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<relatorio_clinico 
+    xmlns="https://www.RegistoClinicos.com/main"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.RegistoClinicos.com/main main.xsd"
+    xmlns:hg="https://www.XSDGeral.com/infoGeralHospital"
+    xmlns:h="https://www.RegistoClinicos.com/infoHospital"
+    xmlns:p="https://www.RegistoClinicos.com/listaPacientes"
+    xmlns:rc="https://www.RegistoClinicos.com/registoClinico"
+    xmlns:rm="https://www.RegistoClinicos.com/ResumoMensal"
+    xmlns:tra="https://www.XSDGeral.com/Tratamento"
+    xmlns:d="https://www.XSDGeral.com/Diagnostico">
+    
+    <!-- Informação do Hospital -->
+    <hospital hg:id="12">
+        <hg:nome>Hospital Geral</hg:nome>
+        <hg:morada>Rua Saúde, 123</hg:morada>
+        <h:mes>12</h:mes>
+        <h:ano_fiscal>2024</h:ano_fiscal>
+    </hospital>
+    
+    <!-- Lista de pacientes -->
+    <lista_pacientes>
+        <paciente id="12345">
+            <p:nome>João Silva</p:nome>
+            <p:data_nascimento>1985-07-22</p:data_nascimento>
+            <p:genero>M</p:genero>
+            <p:contacto>
+                <p:telefone>987654321</p:telefone>
+                <p:email>joao.silva@email.com</p:email>
+            </p:contacto>
+            <p:tipo_paciente>Regular</p:tipo_paciente>
+        </paciente>
+        
+        <paciente id="67890">
+            <p:nome>Maria Oliveira</p:nome>
+            <p:data_nascimento>1990-03-15</p:data_nascimento>
+            <p:genero>F</p:genero>
+            <p:contacto>
+                <p:telefone>não fornecido</p:telefone>
+                <p:email>joao.silva@email.com</p:email>
+            </p:contacto>
+            <p:tipo_paciente>Regular</p:tipo_paciente>
+        </paciente>
+    </lista_pacientes>
+    
+    <!-- Registos Clinicos -->
+    <lista_registos>  
+        <registo_clinico codigo_atend="1">
+            <rc:data>2024-12-21T10:30:00</rc:data>
+            <rc:id_medico>98765</rc:id_medico>
+            <rc:especialidade_med>Cardiologia</rc:especialidade_med>
+            
+            <d:diagnosticos>
+                <d:diagnostico Codigo_CID10="I10">
+                    <d:tipo_diagnostico>Principal</d:tipo_diagnostico>
+                    <d:descricao>Hipertensão essencial (primária)</d:descricao>
+                </d:diagnostico>
+                <d:diagnostico Codigo_CID10="E66">
+                    <d:tipo_diagnostico>Secundario</d:tipo_diagnostico>
+                    <d:descricao>Obesidade de grau I</d:descricao>
+                </d:diagnostico>
+            </d:diagnosticos>     
+            
+            <!-- Pode faltar indicar se foi realizado ou nmão mas isso faz-se rapido -->
+            <tra:tratamentos>
+                <tra:tratamento cod_tratamento="1001">
+                    <tra:tipo>Uso de medicamentos antihipertensivos</tra:tipo>
+                </tra:tratamento>
+                <tra:tratamento cod_tratamento="1002">
+                    <tra:tipo>Recomendações sobre dieta e exercício físico</tra:tipo>
+                </tra:tratamento>
+            </tra:tratamentos>
+        </registo_clinico>
+    </lista_registos>
+ 
+    <!-- Resumo Mensal -->
+    <resumo_mensal>
+        <rm:tot_atendidos>380</rm:tot_atendidos>
+        <rm:genero id_genero="M">
+            <rm:tot_tratamentos>90</rm:tot_tratamentos>
+            <rm:faixas_etarias>
+                <rm:faixa_etaria>
+                    <rm:idades>0-18</rm:idades>
+                    <rm:tot_tratamentos>80</rm:tot_tratamentos>
+                    <rm:especialidades>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Cardiologia</rm:nome_especialidade>
+                            <rm:tot_tratamentos>50</rm:tot_tratamentos>
+                            <rm:tot_cronicos>10</rm:tot_cronicos>
+                        </rm:especialidade>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Ortopedia</rm:nome_especialidade>
+                            <rm:tot_tratamentos>30</rm:tot_tratamentos>
+                            <rm:tot_cronicos>5</rm:tot_cronicos>
+                        </rm:especialidade>
+                    </rm:especialidades>
+                </rm:faixa_etaria>
+                
+                <rm:faixa_etaria>
+                    <rm:idades>19-45</rm:idades>
+                    <rm:tot_tratamentos>60</rm:tot_tratamentos>
+                    <rm:especialidades>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Neurologia</rm:nome_especialidade>
+                            <rm:tot_tratamentos>60</rm:tot_tratamentos>
+                            <rm:tot_cronicos>20</rm:tot_cronicos>
+                        </rm:especialidade>
+                    </rm:especialidades>
+                </rm:faixa_etaria>
+            </rm:faixas_etarias>
+        </rm:genero>
+        
+        <rm:genero id_genero="F">
+            <rm:tot_tratamentos>90</rm:tot_tratamentos>
+            <rm:faixas_etarias>
+                <rm:faixa_etaria>
+                    <rm:idades>0-18</rm:idades>
+                    <rm:tot_tratamentos>110</rm:tot_tratamentos>
+                    <rm:especialidades>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Pediatria</rm:nome_especialidade>
+                            <rm:tot_tratamentos>40</rm:tot_tratamentos>
+                            <rm:tot_cronicos>8</rm:tot_cronicos>
+                        </rm:especialidade>
+                    </rm:especialidades>
+                </rm:faixa_etaria>
+                
+                <rm:faixa_etaria>
+                    <rm:idades>46-70</rm:idades>
+                    <rm:tot_tratamentos>130</rm:tot_tratamentos>
+                    <rm:especialidades>
+                        <rm:especialidade>
+                            <rm:nome_especialidade>Ginecologia</rm:nome_especialidade>
+                            <rm:tot_tratamentos>50</rm:tot_tratamentos>
+                            <rm:tot_cronicos>18</rm:tot_cronicos>
+                        </rm:especialidade>
+                    </rm:especialidades>
+                </rm:faixa_etaria>
+            </rm:faixas_etarias>
+        </rm:genero>
+    </resumo_mensal>
+    
+</relatorio_clinico>

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.Transferencias.com/infoHospital"
+    targetNamespace="https://www.Transferencias.com/infoHospital"
+    xmlns:h="https://www.XSDGeral.com/infoGeralHospital"
+    elementFormDefault="qualified">
     
+    <xs:import namespace="https://www.XSDGeral.com/infoGeralHospital" 
+        schemaLocation="../XSDGerais/InfoGeralHospital.xsd"/>
+    
+    <xs:complexType name="hospitalType">
+        <xs:sequence>
+            <xs:element ref="h:nome"/>
+            <xs:element ref="h:morada"/>
+        </xs:sequence>
+        
+        <xs:attribute ref="h:id"/>
+    </xs:complexType>    
+
 </xs:schema>

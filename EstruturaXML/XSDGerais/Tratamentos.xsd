@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.XSDGeral.com/Tratamento"
+    targetNamespace="https://www.XSDGeral.com/Tratamento"
+    elementFormDefault="qualified">
+    
+    <xs:element name="tratamentos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tratamento" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>       
+    </xs:element>
+
+    
+    <xs:element name="tratamento">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element name="tipo" type="tipoTratamentoType"/>
+            </xs:sequence>
+            
+            <xs:attribute name="cod_tratamento" type="idType"/>  
+        </xs:complexType>
+    </xs:element>
+
+    
+    <xs:simpleType name="tipoTratamentoType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

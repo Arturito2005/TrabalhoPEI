@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transferencias
+    xmlns="https://www.Transferencias.com/main"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.Transferencias.com/main main.xsd"
+    xmlns:hg="https://www.XSDGeral.com/infoGeralHospital"
+    xmlns:h="https://www.Transferencias.com/infoHospital"
+    xmlns:rt="https://www.Transferencias.com/Transferencia"
+    xmlns:rm="https://www.Transferencias.com/ResumoMensal"
+    xmlns:tra="https://www.XSDGeral.com/Tratamento"
+    xmlns:d="https://www.XSDGeral.com/Diagnostico">
+
+    <hospitais>
+        <hopital hg:id="13">
+            <hg:nome>Hospital Santa Maria</hg:nome>
+            <hg:morada>Rua Exemplo, 124</hg:morada>
+        </hopital>
+    </hospitais>
+    
+    <!-- Falta mostrar os regitos clinicos do mesmo paciente -->
+    <lista_transferencias>
+        <transferencia id="4826">
+            <rt:cod_paciente>1</rt:cod_paciente>
+            <rt:data_transferecia>2024-07-22</rt:data_transferecia>
+            <rt:motivo>Consulta de segunda opinião</rt:motivo>
+            <rt:tipo_transferencia>Eletiva</rt:tipo_transferencia>
+            <rt:relatorios_medico>
+                <rt:relatorio_medico id="1">
+                    <rt:id_profissional>1</rt:id_profissional>
+                    <rt:especialidade>Ortopedista</rt:especialidade>
+                    <rt:data_atendimento>2024-10-17T00:00:00Z</rt:data_atendimento>
+                    <d:diagnosticos>
+                        <d:diagnostico Codigo_CID10="G40">
+                            <d:tipo_diagnostico>Principal</d:tipo_diagnostico>
+                            <d:descricao>Epilepsia</d:descricao>
+                        </d:diagnostico>
+                    </d:diagnosticos>
+                    <tra:tratamentos>
+                        <tra:tratamento cod_tratamento="1">
+                            <tra:tipo>Paracetamol 1g</tra:tipo>
+                        </tra:tratamento>
+                    </tra:tratamentos>
+                </rt:relatorio_medico>
+            </rt:relatorios_medico>
+        </transferencia>
+    </lista_transferencias>
+    
+    <resumo_mensal>
+        <rm:tot_transferencias>12</rm:tot_transferencias>
+        <rm:motivos>
+            <rm:tot_transferencias>4</rm:tot_transferencias>
+            <rm:motivo>
+                <rm:nome>Exames complementares de diagnóstico</rm:nome>
+                <rm:tot_transferencias>4</rm:tot_transferencias>
+            </rm:motivo>
+        </rm:motivos>
+        <rm:tipos>
+            <rm:tot_transferencias>3</rm:tot_transferencias>
+            <rm:tipo>
+                <rm:nome>Urgente</rm:nome>
+                <rm:tot_transferencias>2</rm:tot_transferencias>
+            </rm:tipo>
+            <rm:tipo>
+                <rm:nome>Eletiva</rm:nome>
+                <rm:tot_transferencias>1</rm:tot_transferencias>
+            </rm:tipo>
+        </rm:tipos>
+        <rm:hospitais>
+            <rm:tot_transferencias>2</rm:tot_transferencias>
+            <rm:hospital>
+                <rm:nome>Hospital Geral</rm:nome>
+                <rm:tot_transferencias>2</rm:tot_transferencias>
+            </rm:hospital>
+        </rm:hospitais>
+    </resumo_mensal>
+    
+</transferencias>

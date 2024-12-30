@@ -1,4 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.Transferencias.com/ResumoMensal"
+    targetNamespace="https://www.Transferencias.com/ResumoMensal"
+    xmlns:vg="https://www.Transferencias.com/ValoresGerais"
+    elementFormDefault="qualified">
+    
+    <xs:import namespace="https://www.Transferencias.com/ValoresGerais" 
+        schemaLocation="./ValoresGerais.xsd"/>
+    
+    <xs:element name="tot_transferencias" type="tot_type"/>
+    
+    <xs:complexType name="resumoMensalType">
+        <xs:sequence>
+            <xs:element ref="tot_transferencias"/>
+            <xs:element ref="motivos"/>
+            <xs:element ref="tipos"/>
+            <xs:element ref="hospitais"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="tot_type">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="nomeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Inicio elemento motivos -->
+    <xs:element name="motivos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tot_transferencias"/>
+                <xs:element ref="motivo" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Inicio do elemento motivo -->
+    <xs:element name="motivo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="nomeType"/>
+                <xs:element ref="tot_transferencias"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 
+    <!-- Fim do elemento motivo -->
+    <!-- Fim do elemento motivos -->
+    
+    <!-- Inicio elemento tipos -->
+    <xs:element name="tipos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tot_transferencias"/>
+                <xs:element ref="tipo" minOccurs="0" maxOccurs="2"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Inicio do elemento motivo -->
+    <xs:element name="tipo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="vg:tipoType"/>
+                <xs:element ref="tot_transferencias"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Fim do elemento motivo -->
+    <!-- Fim do elemento motivos -->
+    
+    <!-- Inicio do elemento hospitais -->
+    <xs:element name="hospitais">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tot_transferencias"/>
+                <xs:element ref="hospital" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Inicio do elemento hospital -->
+    <xs:element name="hospital">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="nomeType"/>
+                <xs:element ref="tot_transferencias"/>
+            </xs:sequence>
+
+        <xs:attribute name="id" type="idType"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- Fim do elemento hospital -->
+    <!-- Fim do elemento hospitais -->
     
 </xs:schema>

@@ -1,4 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.RegistoClinicos.com/main"
+    targetNamespace="https://www.RegistoClinicos.com/main"
     
+    xmlns:h="https://www.RegistoClinicos.com/infoHospital"
+    xmlns:p="https://www.RegistoClinicos.com/listaPacientes"
+    xmlns:rc="https://www.RegistoClinicos.com/registoClinico"
+    xmlns:rm="https://www.RegistoClinicos.com/ResumoMensal"
+    elementFormDefault="qualified">
+    
+    <xs:import namespace="https://www.RegistoClinicos.com/infoHospital" 
+        schemaLocation="./InfoHospitalRegisto.xsd"/>
+    
+    <xs:import namespace="https://www.RegistoClinicos.com/listaPacientes" 
+        schemaLocation="./PacientesAtendidos.xsd"/>
+    
+    <xs:import namespace="https://www.RegistoClinicos.com/registoClinico" 
+        schemaLocation="./RegistoClinico.xsd"/>
+    
+    <xs:import namespace="https://www.RegistoClinicos.com/ResumoMensal" 
+        schemaLocation="./ResumoMensal.xsd"/>
+    
+    <xs:element name="relatorio_clinico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="hospital" type="h:hospitalType"/>
+                <xs:element ref="lista_pacientes"/>
+                <xs:element ref="lista_registos"/>
+                <xs:element name="resumo_mensal" type="rm:resumoMensalType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="lista_pacientes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="paciente" type="p:pacienteType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="lista_registos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="registo_clinico" type="rc:registoClinicoType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 </xs:schema>

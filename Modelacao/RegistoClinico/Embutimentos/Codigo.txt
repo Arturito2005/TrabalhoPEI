@@ -1,0 +1,46 @@
+[
+  {
+    $limit: 10000
+  },
+  {
+    $lookup: {
+      from: "Profissionais",
+      localField: "ID_Profissional",
+      foreignField: "ID_Profissional",
+      as: "Dados_Profissional"
+    }
+  },
+  {
+    $unwind: {
+      path: "$Dados_Profissional",
+      preserveNullAndEmptyArrays: true
+    }
+  },
+  {
+    $lookup: {
+      from: "Tratamentos",
+      localField: "ID_Atendimento",
+      foreignField: "ID_Registro_Clinico",
+      as: "Tratamentos"
+    }
+  },
+  {
+    $project: {
+      _id: 1,
+      ID_Atendimento: 1,
+      ID_Paciente: 1,
+      ID_Profissional: 1,
+      Especialidade:
+        "$Dados_Profissional.Especialidade",
+      Data_Atendimento: 1,
+      Diagnosticos: 1,
+      Tratamentos: 1
+    }
+  },
+  {
+    $out: {
+      db: "MedSync",
+      coll: "AmostraRegistosClinicos"
+    }
+  }
+]

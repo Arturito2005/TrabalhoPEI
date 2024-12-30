@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.Transferencias.com/Transferencia"
+    targetNamespace="https://www.Transferencias.com/Transferencia"
+    xmlns:t="https://www.XSDGeral.com/Tratamento"
+    xmlns:d="https://www.XSDGeral.com/Diagnostico"
+    elementFormDefault="qualified">
+    
+    <xs:import namespace="https://www.XSDGeral.com/Tratamento" 
+        schemaLocation="../XSDGerais/Tratamentos.xsd"/>
+    
+    <xs:import namespace="https://www.XSDGeral.com/Diagnostico" 
+        schemaLocation="../XSDGerais/Diagnosticos.xsd"/>
+
+    <!-- Inicio elemento transferencia -->
+    <xs:complexType name="transferenciaType"> 
+        <xs:sequence>
+            <xs:element name="cod_paciente" type="idType"/>
+            <xs:element name="data_transferecia" type="xs:date"/>
+            <xs:element name="motivo" type="motivoType"/>
+            <xs:element name="tipo_transferencia" type="tipoTransferenciaType"/>
+            <xs:element ref="relatorios_medico" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        
+        <xs:attribute name="id" type="idType"/>
+    </xs:complexType>     
+    
+    <xs:simpleType name="tipoTransferenciaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Urgente"/>
+            <xs:enumeration value="Eletiva"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="motivoType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="tipo_transferencia">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Urgente"/>
+                <xs:enumeration value="Eletiva"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- Fim do elemento transferencia -->
+    
+    <!-- Inicio do Relatorio Medicos -->
+    <xs:element name="relatorios_medico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="relatorio_medico" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>  
+    
+    <xs:element name="relatorio_medico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id_profissional" type="idType"/>
+                <xs:element name="especialidade" type="especialidadeType"/>
+                <xs:element name="data_atendimento" type="xs:dateTime"/>
+                <xs:element ref="d:diagnosticos" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="t:tratamentos" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        
+        <xs:attribute name="id" type="idType"/>
+        </xs:complexType>
+        
+    </xs:element>
+    
+    <xs:simpleType name="especialidadeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Fim do relatorio mensal -->
+    
+</xs:schema>

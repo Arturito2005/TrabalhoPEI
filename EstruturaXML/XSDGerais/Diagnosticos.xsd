@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.XSDGeral.com/Diagnostico"
+    targetNamespace="https://www.XSDGeral.com/Diagnostico"
+    elementFormDefault="qualified">
+    
+    <xs:element name="diagnosticos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="diagnostico" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="diagnostico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipo_diagnostico" type="tipoDiagType"/>
+                <xs:element name="descricao" type="descricaoType"/>
+            </xs:sequence>
+            
+            <xs:attribute name="Codigo_CID10" type="CID10Type"/>        
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="CID10Type">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoDiagType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Principal"/>
+            <xs:enumeration value="Secundario"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="descricaoType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
