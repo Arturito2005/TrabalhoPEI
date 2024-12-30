@@ -19,7 +19,7 @@
             <xs:element name="data_transferencia" type="xs:dateTime"/>
             <xs:element name="motivo" type="motivoType"/>
             <xs:element name="tipo_transferencia" type="tipoTransferenciaType"/>
-            <xs:element ref="relatorios_medico" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="relatorios_medicos" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         
         <xs:attribute name="id" type="idType" use="required"/>
@@ -55,7 +55,7 @@
     <!-- Fim do elemento transferencia -->
     
     <!-- Inicio do Relatorio Medicos -->
-    <xs:element name="relatorios_medico">
+    <xs:element name="relatorios_medicos">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="relatorio_medico" minOccurs="0" maxOccurs="unbounded"/>
