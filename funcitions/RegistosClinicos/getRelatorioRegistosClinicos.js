@@ -29,13 +29,9 @@ exports = async function(request, response){
     
     const RelatorioRegistosClinicos = {
         hospital: hospital,
-        lista_pacientes: await context.functions.execute("getPacientes"),
-        lista_registos: await context.functions.execute("getRegistosClinicos"),
-        resumo_mensal: await context.functions.execute("getResumoMensalRegistosClinicos", {
-                                                      query: {
-                                                        mes: mes,
-                                                        ano: ano
-                                                      }})    
+        lista_pacientes: await context.functions.execute("getPacientes", request, response),
+        lista_registos: await context.functions.execute("getRegistosClinicos", request, response),
+        resumo_mensal: await context.functions.execute("getResumoMensalRegistosClinicos", request, response)    
     }
 
     return RelatorioRegistosClinicos;
