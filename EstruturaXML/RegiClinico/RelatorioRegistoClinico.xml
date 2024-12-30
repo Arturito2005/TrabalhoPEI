@@ -9,12 +9,17 @@
     xmlns:rm="https://www.medsync.com/ResumoMensalRegistosClinicos" 
     xmlns:d="https://www.medsync.com/Diagnostico" 
     xmlns:tra="https://www.medsync.com/Tratamento">
+    
+    
     <hospital hg:id="1">
         <hg:nome>Hospital Geral</hg:nome>
         <hg:morada>Rua Saúde, 123</hg:morada>
         <h:mes>3</h:mes>
         <h:ano_fiscal>2023</h:ano_fiscal>
     </hospital>
+    
+    
+    
     <lista_pacientes>
         <paciente id="211">
             <p:nome>Tyrone Rose</p:nome>

@@ -109,7 +109,6 @@ declare
            element rm:hospitais {
               for $hospital in $relatorio/resumo__mensal/porHospital/_
               return element rm:hospital {
-                attribute hg:id { $hospital/hospitalId},
                 element hg:nome { $hospital/__id/text()},
                 element rm:tot_transferencias { $hospital/total/text()}
               }

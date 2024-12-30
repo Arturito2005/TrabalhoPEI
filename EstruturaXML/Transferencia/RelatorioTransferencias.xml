@@ -7143,27 +7143,27 @@
             </rm:tipo>
         </rm:tipos>
         <rm:hospitais>
-            <rm:hospital hg:id="12">
+            <rm:hospital>
                 <hg:nome>Clínica São Paulo</hg:nome>
                 <rm:tot_transferencias>206</rm:tot_transferencias>
             </rm:hospital>
-            <rm:hospital hg:id="2">
+            <rm:hospital>
                 <hg:nome>Hospital São João</hg:nome>
                 <rm:tot_transferencias>201</rm:tot_transferencias>
             </rm:hospital>
-            <rm:hospital hg:id="1">
+            <rm:hospital>
                 <hg:nome>Hospital Geral da Cidade</hg:nome>
                 <rm:tot_transferencias>198</rm:tot_transferencias>
             </rm:hospital>
-            <rm:hospital hg:id="4">
+            <rm:hospital>
                 <hg:nome>Hospital Santa Maria</hg:nome>
                 <rm:tot_transferencias>194</rm:tot_transferencias>
             </rm:hospital>
-            <rm:hospital hg:id="5">
+            <rm:hospital>
                 <hg:nome>Hospital de Coração</hg:nome>
                 <rm:tot_transferencias>191</rm:tot_transferencias>
             </rm:hospital>
-            <rm:hospital hg:id="6">
+            <rm:hospital>
                 <hg:nome>Centro Hospitalar do Norte</hg:nome>
                 <rm:tot_transferencias>189</rm:tot_transferencias>
             </rm:hospital>
