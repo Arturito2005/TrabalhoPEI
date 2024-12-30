@@ -48,10 +48,7 @@ exports = async function(request, response) {
 
     const results = await collection.aggregate(pipeline).toArray();
 
-    return {
-      status: 200,
-      resumo: results[0]
-    };
+    return results[0];
 
   } catch (error) {
     return {
