@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "02f6a440-68ef-40e7-b57d-51d6e38cc7d2",
+		"name": "BaseX",
+		"description": "Esta collection possui os get, responsaveis por gerar os link do BaseX responsáveis por gerar os xml. Esta collections está dividida em duas pastas, sendo elas:\n\n- Relatorios: esta pasta tem todos os get, para gerar os relatorios na estrutura xml, pedida no enunciado;\n    \n- Getters: esta pasta possui alguns get, que retornam partes do relatorio.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40137420",
+		"_collection_link": "https://grupo1-2125.postman.co/workspace/a87be11f-bdbb-4fc6-8dc3-3fb99d4a9bc6/collection/40137420-02f6a440-68ef-40e7-b57d-51d6e38cc7d2?action=share&source=collection_link&creator=40137420"
+	},
+	"item": [
+		{
+			"name": "Relatorios",
+			"item": [
+				{
+					"name": "RelatorioRegistosClinicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RegistosClinicos/getRelatorioRegistosClinicos?mes=3&ano=2023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RegistosClinicos",
+								"getRelatorioRegistosClinicos"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "3",
+									"description": "Mes do relatorio dos Registos Clinicos"
+								},
+								{
+									"key": "ano",
+									"value": "2023",
+									"description": "Ano do relatorio dos Registos Clinicos"
+								}
+							]
+						},
+						"description": "Get que busca o relatorio dos registos clinicos, para um determinado mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "RelatorioTransferencias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Transferencias/getRelatorioTransferencia?mes=12&ano=2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Transferencias",
+								"getRelatorioTransferencia"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "12",
+									"description": "mes do relatorio de transferencia a pesquisar"
+								},
+								{
+									"key": "ano",
+									"value": "2022",
+									"description": "ano do relatorio de transferencias a pesquisar"
+								}
+							]
+						},
+						"description": "Get que busca o relatorio das transferencias, para um determinado mês e ano"
+					},
+					"response": []
+				}
+			],
+			"description": "Esta pasta possui os get, para ir buscar os dados dos relatorios, sendo eles:\n\n- RelatorioRegistosClinicos;\n    \n- RelatorioTransferencias."
+		},
+		{
+			"name": "RegistosClinicos",
+			"item": [
+				{
+					"name": "GetPacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RegistosClincios/getPacientes?mes=6&ano=2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RegistosClincios",
+								"getPacientes"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "6",
+									"description": "Mes de registo dos pacientes a consultar"
+								},
+								{
+									"key": "ano",
+									"value": "2020",
+									"description": "Ano de registodos pacientes a consultar"
+								}
+							]
+						},
+						"description": "Get que busca todos os pacientes registados num determindo mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetRegistosClinicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RegistosClincios/getRegistosClinicos?mes=3&ano=2023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RegistosClincios",
+								"getRegistosClinicos"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "3",
+									"description": "Mes dos Registos Clinicos a consultar"
+								},
+								{
+									"key": "ano",
+									"value": "2023",
+									"description": "Ano dos Registos Clinicos a consultar"
+								}
+							]
+						},
+						"description": "Get que busca todos os registos clinicos realizados num determindo mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetResumoMensalRegistosClinicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RegistosClinicos/getResumoMensalRegistosClinicos?mes=10&ano=2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RegistosClinicos",
+								"getResumoMensalRegistosClinicos"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "10",
+									"description": "mês a pesquisar do resumo mensal dos registos clinicos"
+								},
+								{
+									"key": "ano",
+									"value": "2024",
+									"description": "ano a pesquisar do resumo mensal dos registos clinicos"
+								}
+							]
+						},
+						"description": "Get que busca o resumo mensal dos registos clinicos num determindo mês e ano."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta pasta possui todos os get, usados para fazer o relatorio dos registos clinicos, separados indivualmente, sendo eles:\n\n- GetPacientes;\n    \n- GetRegistosClinicos;\n    \n- GetResumoMensalRegistosClinicos."
+		},
+		{
+			"name": "Transferencias",
+			"item": [
+				{
+					"name": "GetHospitaisTransferencia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Transferencias/getHospitaisTransferencias?mes=12&ano=2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Transferencias",
+								"getHospitaisTransferencias"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "12",
+									"description": "Mês a pesquisar pelos os hospitais"
+								},
+								{
+									"key": "ano",
+									"value": "2022",
+									"description": "Ano a pesquisar pelos os hospitais"
+								}
+							]
+						},
+						"description": "Get que vai buscar todos os hospitais de destino das transferencias de um determinado mês e ano"
+					},
+					"response": []
+				},
+				{
+					"name": "GetTransferencias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Transferencias/getTransferencias?mes=12&ano=2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Transferencias",
+								"getTransferencias"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "12",
+									"description": "Mês a pesquisar pelas transferencias"
+								},
+								{
+									"key": "ano",
+									"value": "2022",
+									"description": "Ano a pesquisar pelas transferencias"
+								}
+							]
+						},
+						"description": "Get que vai buscar todas as transferencias num determinado mês e ano."
+					},
+					"response": []
+				},
+				{
+					"name": "GetResumoMensalTransferencias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Transferencias/getResumoMensalTransferencia?mes=10&ano=2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Transferencias",
+								"getResumoMensalTransferencia"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "10",
+									"description": "mês no qual desejam-se o resumo das transferencias nele realizadas "
+								},
+								{
+									"key": "ano",
+									"value": "2024",
+									"description": "Ano no qual desejam-se o resumo das transferencias nele realizadas "
+								}
+							]
+						},
+						"description": "Get que vai buscar o resumo mensal das Transferencias, num determinado mês e ano."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta pasta possui todos os get, usados para fazer o relatorio das transferencias, separados indivualmente, sendo eles:\n\n- GetHospitalTransferencia;\n    \n- GetTransferencias;\n    \n- GetResumoMensalTransferencias."
+		}
+	]
+}

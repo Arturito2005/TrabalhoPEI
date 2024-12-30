@@ -71,8 +71,8 @@ declare
                         element tra:tratamentos {
                           for $tratamento in $relatorio_med/Tratamentos/_
                           return element tra:tratamento {
-                            attribute id { $tratamento/ID__Tratamento},
-                            element tra:tipo_tratamento { $tratamento/Tipo__Tratamento/text()}
+                            attribute cod_tratamento { $tratamento/ID__Tratamento},
+                            element tra:tipo { $tratamento/Tipo__Tratamento/text()}
                           }
                         }
                   }

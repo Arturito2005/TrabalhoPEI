@@ -28,7 +28,7 @@
     
     <xs:simpleType name="ano_fiscType">
         <xs:restriction base="xs:int">
-            <xs:minInclusive value="2000"/>
+            <xs:minInclusive value="1900"/>
             <xs:maxInclusive value="2025"/>
         </xs:restriction>
     </xs:simpleType>
