@@ -20,7 +20,7 @@ exports = async function(request, response){
     } 
     
     const RelatorioTransferencias = {
-        hospitais: await context.functions.execute("getHospitaisTransferencia"),
+        hospitais: await context.functions.execute("getHospitaisTransferencia", request, response),
         registos_transferencias: await context.functions.execute("getTransferencias",request, response),
         resumo_mensal: await context.functions.execute("getResumoMensalTransferencias",request, response)    
     }
