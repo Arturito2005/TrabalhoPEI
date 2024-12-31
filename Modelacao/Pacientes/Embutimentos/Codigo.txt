@@ -1,14 +1,6 @@
 [
   {
     $lookup: {
-      from: "Transferencias",
-      localField: "ID_Paciente",
-      foreignField: "ID_Paciente",
-      as: "Transferencias"
-    }
-  },
-  {
-    $lookup: {
       from: "AmostraRegistosClinicos",
       localField: "ID_Paciente",
       foreignField: "ID_Paciente",
@@ -16,10 +8,19 @@
     }
   },
   {
+    $lookup: {
+      from: "Transferencias",
+      localField: "ID_Paciente",
+      foreignField: "ID_Paciente",
+      as: "Transferencias"
+    }
+  },
+  {
     $project: {
       ID_Paciente: 1,
       Nome_Completo: 1,
       Data_Nascimento: 1,
+      Data_Registo: 1,
       Género: 1,
       Telefone: 1,
       Email: 1,
