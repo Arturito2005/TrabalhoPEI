@@ -51,6 +51,7 @@
     </xs:element>
 
     <!-- Inicio do elemento para as faixas etarias, por genero -->
+    
     <xs:element name="faixa_etaria">
         <xs:complexType>
             <xs:sequence>
@@ -69,11 +70,11 @@
     </xs:simpleType>
     
     <!-- Inicio do elemento especialidades -->
+    
     <xs:element name="especialidades">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="especialidade" minOccurs="0" maxOccurs="unbounded"/>
-
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -81,7 +82,7 @@
     <xs:element name="especialidade">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nome_especialidade"/>
+                <xs:element name="nome_especialidade" type ="especialidadeType"/>
                 <xs:element ref="tot_tratamentos"/>
                 <xs:element ref="tot_cronicos"/>
             </xs:sequence>
