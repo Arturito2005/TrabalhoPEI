@@ -34,6 +34,14 @@
             <xs:enumeration value="F"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <xs:simpleType name="tipo_pacienteType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Novo"/>
+            <xs:enumeration value="Regular"/>
+            <xs:enumeration value="Crónico"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     <!-- Inicio do elemento contacto -->
     <xs:element name="contacto">
@@ -58,13 +66,8 @@
             <xs:pattern value="não fornecido"/>
         </xs:restriction>
     </xs:simpleType>
+    
     <!-- Fim do elemento contacto -->
     
-    <xs:simpleType name="tipo_pacienteType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Novo"/>
-            <xs:enumeration value="Regular"/>
-            <xs:enumeration value="Crónico"/>
-        </xs:restriction>
-    </xs:simpleType>
+
 </xs:schema>

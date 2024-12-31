@@ -8,16 +8,25 @@
         <xs:sequence>
             <xs:sequence>
                 <xs:element name="tot_atendidos" type="totType"/>
-                <xs:element ref="genero" minOccurs="0" maxOccurs="2"/>
+                <xs:element ref="genero" minOccurs="2" maxOccurs="2"/>
             </xs:sequence>
         </xs:sequence>
     </xs:complexType>
     
     <!-- Geral -->
+    <xs:simpleType name="totType">
+        <xs:restriction base="xs:int">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:element name="tot_tratamentos" type="totType"/>
     <xs:element name="tot_cronicos" type="totType"/>
+    
     <!-- Fim Geral -->
+    
     <!-- Inicio do elemento genero dos pacientes atendidos -->
+    
     <xs:element name="genero">
         <xs:complexType>
             <xs:sequence>
@@ -91,11 +100,5 @@
     <!-- Fim do elemento de faixa Etarias -->
     <!-- Fim do lemento genero dos pacientes atendidos -->
     <!-- Fim do elemento pacientes_atendidos -->
-    
-    <!-- Simple Type geral para qualquer elemento que seja um total de qualquer coisa -->
-    <xs:simpleType name="totType">
-        <xs:restriction base="xs:int">
-            <xs:minExclusive value="0"/>
-        </xs:restriction>
-    </xs:simpleType>
+
 </xs:schema>
