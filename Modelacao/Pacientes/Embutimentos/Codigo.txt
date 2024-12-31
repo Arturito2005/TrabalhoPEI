@@ -37,5 +37,11 @@
       "RegistoClinicos.Tratamentos": 1,
       "RegistoClinicos.Especialidade": 1
     }
+  },
+  {
+    $out: {
+      db: "MedSync",
+      coll: "Pacientes"
+    }
   }
 ]

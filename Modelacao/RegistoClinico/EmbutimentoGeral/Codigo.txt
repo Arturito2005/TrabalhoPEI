@@ -1,5 +1,36 @@
 [
   {
+    $sort: {
+      ID_Atendimento: 1,
+      Tipo_Diagnostico: 1
+    }
+  },
+  {
+    $group: {
+      _id: "$ID_Atendimento",
+      ID_Atendimento: {
+        $first: "$ID_Atendimento"
+      },
+      ID_Paciente: {
+        $first: "$ID_Paciente"
+      },
+      ID_Profissional: {
+        $first: "$ID_Profissional"
+      },
+      Data_Atendimento: {
+        $first: "$Data_Atendimento"
+      },
+      Diagnosticos: {
+        $push: {
+          Tipo_Diagnostico: "$Tipo_Diagnostico",
+          Codigo_CID10: "$Codigo_CID10",
+          Descricao_Diagnostico:
+            "$Descricao_Diagnostico"
+        }
+      }
+    }
+  },
+  {
     $limit: 10000
   },
   {
