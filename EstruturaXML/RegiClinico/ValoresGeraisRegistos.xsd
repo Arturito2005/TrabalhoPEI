@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="https://www.medsync.com/ValoresGeraisRegistos"
+    targetNamespace="https://www.medsync.com/ValoresGeraisRegistos"
+    elementFormDefault="qualified">
+    
+    <xs:simpleType name="generoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="F"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

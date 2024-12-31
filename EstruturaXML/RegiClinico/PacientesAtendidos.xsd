@@ -2,19 +2,24 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns="https://www.medsync.com/listaPacientes"
     targetNamespace="https://www.medsync.com/listaPacientes"
+    xmlns:vg="https://www.medsync.com/ValoresGeraisRegistos"
     elementFormDefault="qualified">
+    
+    <xs:import namespace="https://www.medsync.com/ValoresGeraisRegistos" 
+        schemaLocation="./ValoresGeraisRegistos.xsd"/>
     
     <xs:complexType name="pacienteType">
         <xs:sequence>
             <xs:element name="nome" type="nomeType"/>
             <xs:element name="data_nascimento" type="xs:dateTime"/>
-            <xs:element name="genero" type="generoType"/>
+            <xs:element name="genero" type="vg:generoType"/>
             <xs:element ref="contacto"/>
             <xs:element name="tipo_paciente" type="tipo_pacienteType"/>
         </xs:sequence>
         
         <xs:attribute name="id" type="idType" use="required"/> 
     </xs:complexType>
+    
     
     <xs:simpleType name="idType">
         <xs:restriction base="xs:int">
@@ -26,13 +31,6 @@
         <xs:restriction base="xs:string">
             <xs:maxLength value="100"/>
         </xs:restriction>    
-    </xs:simpleType>
-    
-    <xs:simpleType name="generoType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="M"/>
-            <xs:enumeration value="F"/>
-        </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="tipo_pacienteType">

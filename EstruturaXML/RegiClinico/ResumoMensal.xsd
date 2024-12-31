@@ -2,7 +2,11 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns="https://www.medsync.com/ResumoMensalRegistosClinicos"
     targetNamespace="https://www.medsync.com/ResumoMensalRegistosClinicos"
+    xmlns:vg="https://www.medsync.com/ValoresGeraisRegistos"
     elementFormDefault="qualified">
+    
+    <xs:import namespace="https://www.medsync.com/ValoresGeraisRegistos" 
+        schemaLocation="./ValoresGeraisRegistos.xsd"/>
     
     <xs:complexType name="resumoMensalType">
         <xs:sequence>
@@ -14,6 +18,7 @@
     </xs:complexType>
     
     <!-- Geral -->
+    
     <xs:simpleType name="totType">
         <xs:restriction base="xs:int">
             <xs:minInclusive value="0"/>
@@ -33,16 +38,9 @@
                 <xs:element ref="tot_tratamentos"/>
                 <xs:element ref="faixas_etarias"/>
             </xs:sequence>
-            <xs:attribute name="id_genero" type="generoType" use="required"/>
+            <xs:attribute name="id_genero" type="vg:generoType" use="required"/>
         </xs:complexType>
     </xs:element>
-    
-    <xs:simpleType name="generoType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="M"/>
-            <xs:enumeration value="F"/>
-        </xs:restriction>
-    </xs:simpleType>
     
     <xs:element name="faixas_etarias">
         <xs:complexType>
