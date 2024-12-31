@@ -33,11 +33,12 @@ exports = async function(request, response){
     const updatesCronico = [];
     const updatesRegular = [];
     const updatesNovo = [];
+
     for (let i = 0; i < pacientes.length; i++) {
       const paciente = pacientes[i];
       let tipo_paciente;
 
-      if(Array.isArray(paciente.RegistoClinicos) && paciente.RegistoClinicos.length >= 1) {
+      if(Array.isArray(paciente.RegistoClinicos) && paciente.RegistoClinicos.length > 1) {
         let cronico = false;
         
         for (let j = 0; j < paciente.RegistoClinicos.length && !cronico; j++) {

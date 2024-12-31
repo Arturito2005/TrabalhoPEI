@@ -77,6 +77,7 @@ exports = async function(request, response){
               Genero_F.tot_tratamentos += faixaItem.Total_Tratamentos;
               Genero_F.tot_atendimento += faixaItem.Total_Atendimentos;
       });
+      
       const ResumoMensal ={
           Total_Atendimento: 0,
           genero: [Genero_M, Genero_F]
