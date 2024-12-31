@@ -5,7 +5,7 @@
 		"description": "Este package contêm todos os get e put, necessarios para o Relatorio dos RegistosClinicos, organizados nas pastas:\n\n- Get;\n    \n- Put",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "40137420",
-		"_collection_link": "https://grupo1-2125.postman.co/workspace/a87be11f-bdbb-4fc6-8dc3-3fb99d4a9bc6/collection/40137420-bcf9dcc2-4290-4ff8-b07d-e0829f287d71?action=share&source=collection_link&creator=40137420"
+		"_collection_link": "https://grupo1-2125.postman.co/workspace/Trabalho_PEI~a87be11f-bdbb-4fc6-8dc3-3fb99d4a9bc6/collection/40137420-bcf9dcc2-4290-4ff8-b07d-e0829f287d71?action=share&source=collection_link&creator=40137420"
 	},
 	"item": [
 		{
@@ -55,7 +55,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getRegistosClinicos?mes=12&ano=1975",
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getRegistosClinicos?mes=6&ano=2023",
 							"protocol": "https",
 							"host": [
 								"eu-west-2",
@@ -73,12 +73,12 @@
 							"query": [
 								{
 									"key": "mes",
-									"value": "12",
+									"value": "6",
 									"description": "Mes dos Registos Clinicos a consultar"
 								},
 								{
 									"key": "ano",
-									"value": "1975",
+									"value": "2023",
 									"description": "Ano dos Registos Clinicos a consutlar"
 								}
 							]
@@ -93,7 +93,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getRelatorioRegistosClinicos?mes=12&ano=1975",
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getRelatorioRegistosClinicos?mes=6&ano=2023",
 							"protocol": "https",
 							"host": [
 								"eu-west-2",
@@ -111,12 +111,12 @@
 							"query": [
 								{
 									"key": "mes",
-									"value": "12",
+									"value": "6",
 									"description": "Mes do relatorio do resumo Mensal dos Registos Clinicos"
 								},
 								{
 									"key": "ano",
-									"value": "1975",
+									"value": "2023",
 									"description": "Anodo relatorio do resumo Mensal dos Registos Clinicos"
 								}
 							]
@@ -131,7 +131,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getResumoMensalRegistosClinicos?mes=10&ano=2024",
+							"raw": "https://eu-west-2.aws.data.mongodb-api.com/app/medsync_api-jqjjbuy/endpoint/getResumoMensalRegistosClinicos?mes=6&ano=2023",
 							"protocol": "https",
 							"host": [
 								"eu-west-2",
@@ -149,12 +149,12 @@
 							"query": [
 								{
 									"key": "mes",
-									"value": "10",
+									"value": "6",
 									"description": "Mês do resumo mesnal do registo Clinico"
 								},
 								{
 									"key": "ano",
-									"value": "2024",
+									"value": "2023",
 									"description": "Ano do reumo mensal do registo Clinico"
 								}
 							]

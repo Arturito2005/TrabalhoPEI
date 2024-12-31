@@ -2,7 +2,7 @@ exports = async function(request, response){
   try {
     const ano = parseInt(request.query.ano, 10);
     const mes = parseInt(request.query.mes, 10);
-    if(mes < 0 || mes > 12) {
+    if(mes < 1 || mes > 12) {
       return { 
         status: 400, 
         message: "O campo mes deve ser um numero entre 0 e 12", 

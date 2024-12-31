@@ -5,7 +5,7 @@
 		"description": "Esta collection possui os get, responsaveis por gerar os link do BaseX responsáveis por gerar os xml. Esta collections está dividida em duas pastas, sendo elas:\n\n- Relatorios: esta pasta tem todos os get, para gerar os relatorios na estrutura xml, pedida no enunciado;\n    \n- Getters: esta pasta possui alguns get, que retornam partes do relatorio.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "40137420",
-		"_collection_link": "https://grupo1-2125.postman.co/workspace/a87be11f-bdbb-4fc6-8dc3-3fb99d4a9bc6/collection/40137420-02f6a440-68ef-40e7-b57d-51d6e38cc7d2?action=share&source=collection_link&creator=40137420"
+		"_collection_link": "https://grupo1-2125.postman.co/workspace/Trabalho_PEI~a87be11f-bdbb-4fc6-8dc3-3fb99d4a9bc6/collection/40137420-02f6a440-68ef-40e7-b57d-51d6e38cc7d2?action=share&source=collection_link&creator=40137420"
 	},
 	"item": [
 		{
