@@ -10,4 +10,10 @@
             <xs:enumeration value="F"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <xs:simpleType name="especialidadeType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

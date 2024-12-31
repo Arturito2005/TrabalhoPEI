@@ -2,9 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns="https://www.medsync.com/listaRegistoClinico"
     targetNamespace="https://www.medsync.com/listaRegistoClinico"
+    xmlns:vg="https://www.medsync.com/ValoresGeraisRegistos"
     xmlns:t="https://www.medsync.com/Tratamento"
     xmlns:d="https://www.medsync.com/Diagnostico"
     elementFormDefault="qualified">
+    
+    <xs:import namespace="https://www.medsync.com/ValoresGeraisRegistos" 
+        schemaLocation="./ValoresGeraisRegistos.xsd"/>
     
     <xs:import namespace="https://www.medsync.com/Tratamento" 
         schemaLocation="../XSDGerais/Tratamentos.xsd"/>
@@ -16,7 +20,7 @@
         <xs:sequence>
             <xs:element name="data" type="xs:dateTime"/>
             <xs:element name="id_medico" type="idType"/>
-            <xs:element name="especialidade_med" type="especialidadeType"/>
+            <xs:element name="especialidade_med" type="vg:especialidadeType"/>
             <xs:element ref="d:diagnosticos" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="t:tratamentos" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -29,8 +33,5 @@
             <xs:minInclusive value="0"/>
         </xs:restriction>
     </xs:simpleType>
-    
-    <xs:simpleType name="especialidadeType">
-        <xs:restriction base="xs:string"></xs:restriction>
-    </xs:simpleType>    
+       
 </xs:schema>

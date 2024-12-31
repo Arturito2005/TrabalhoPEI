@@ -82,19 +82,13 @@
     <xs:element name="especialidade">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nome_especialidade" type ="especialidadeType"/>
+                <xs:element name="nome_especialidade" type="vg:especialidadeType"/>
                 <xs:element ref="tot_tratamentos"/>
                 <xs:element ref="tot_cronicos"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
     
-    <xs:simpleType name="especialidadeType">
-        <xs:restriction base="xs:string">
-            <xs:maxLength value="100"/>
-        </xs:restriction>
-    </xs:simpleType>
-   
     <!-- Fim do elemento de especialidade -->
     <!-- Fim do elemento de faixa Etarias -->
     <!-- Fim do lemento genero dos pacientes atendidos -->
