@@ -39,7 +39,7 @@
     <xs:element name="contacto">
         <xs:complexType >
             <xs:sequence>
-                <xs:element name="telefone" type="telefoneType"/>
+                <xs:element name="telefone" type="xs:string"/>
                 <xs:element name="email" type="emailType"/>
             </xs:sequence>
         </xs:complexType>
@@ -52,10 +52,6 @@
         </xs:restriction>
     </xs:simpleType> -->
    
-    <xs:simpleType name="telefoneType">
-        <xs:restriction base="xs:string"/>
-        
-    </xs:simpleType>
     <xs:simpleType name="emailType">
         <xs:restriction base="xs:string">
             <xs:pattern value="([A-Za-z0-9._%+-]+)@([A-Za-z0-9.-]+\.[A-Za-z]{2,})"/>
