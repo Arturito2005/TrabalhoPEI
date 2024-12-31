@@ -24,7 +24,9 @@
     </xs:element>
     
     <xs:simpleType name="CID10Type">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="tipoDiagType">
