@@ -29,7 +29,7 @@
     <xs:element name="hospitais">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="hospital" type="h:hospitalType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="hospital" type="h:hospitalType" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -37,7 +37,7 @@
     <xs:element name="lista_transferencias">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="transferencia" type="rt:transferenciaType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="transferencia" type="rt:transferenciaType" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

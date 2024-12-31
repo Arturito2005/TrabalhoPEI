@@ -12,7 +12,6 @@
     <xs:import namespace="https://www.medsync.com/Diagnostico" 
         schemaLocation="../XSDGerais/Diagnosticos.xsd"/>
 
-    <!-- Inicio elemento transferencia -->
     <xs:complexType name="transferenciaType"> 
         <xs:sequence>
             <xs:element name="cod_paciente" type="idType"/>
@@ -40,18 +39,11 @@
     
     <xs:simpleType name="motivoType">
         <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
             <xs:maxLength value="250"/>
         </xs:restriction>
     </xs:simpleType>
     
-    <xs:element name="tipo_transferencia">
-        <xs:simpleType>
-            <xs:restriction base="xs:string">
-                <xs:enumeration value="Urgente"/>
-                <xs:enumeration value="Eletiva"/>
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
     <!-- Fim do elemento transferencia -->
     
     <!-- Inicio do Relatorio Medicos -->
@@ -75,14 +67,15 @@
         
             <xs:attribute name="id" type="idType" use="required"/>
         </xs:complexType>
-        
     </xs:element>
     
     <xs:simpleType name="especialidadeType">
         <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
             <xs:maxLength value="250"/>
         </xs:restriction>
     </xs:simpleType>
+    
     <!-- Fim do relatorio mensal -->
     
 </xs:schema>
