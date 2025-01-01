@@ -26,7 +26,6 @@ declare
     )[2]/json
         
      return element relatorio_clinico {
-       (:Falta apenas isto xmlns="https://www.medsync.com/RegistosClinicos":)
        namespace xsi {"http://www.w3.org/2001/XMLSchema-instance"},
        attribute xsi:schemaLocation {"https://www.medsync.com/RegistosClinicos/getRelatorioRegistosClinicos main.xsd"},
        namespace hg {"https://www.medsync.com/infoGeralHospital"},
