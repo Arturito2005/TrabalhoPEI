@@ -34,35 +34,38 @@ exports = async function(request, response){
     const updatesRegular = [];
     const updatesNovo = [];
 
+    const fiveYearsAgo = new Date(); 
+    fiveYearsAgo.setFullYear(data_atual.getFullYear() - 5);
     for (let i = 0; i < pacientes.length; i++) {
       const paciente = pacientes[i];
-      let tipo_paciente;
+      let tipo_paciente = "Novo";
 
       if(Array.isArray(paciente.RegistoClinicos) && paciente.RegistoClinicos.length > 1) {
         let cronico = false;
         
         for (let j = 0; j < paciente.RegistoClinicos.length && !cronico; j++) {
           const registo = paciente.RegistoClinicos[j];
+          const data_atendimento = registo.Data_Atendimento;
+
+          if (data_atendimento >= fiveYearsAgo && data_atendimento <= data_atual) {
+            tipo_paciente = "Regular"; 
+          }
           
           if(Array.isArray(registo.Tratamentos)) {
             for (let k = 0; k < registo.Tratamentos.length && !cronico; k++) {
           
               if (registo.Tratamentos[k].Realizado == "Nao") {
                 cronico = true;
+                tipo_paciente = "Crónico"; 
+                break;
               }
             }
           }  
+
+          if(cronico) {
+            break;
+          }   
         }
-        
-        if(!cronico) {
-          tipo_paciente = "Regular";
-        } else {
-          tipo_paciente = "Crónico";
-          
-        }    
-      } else {
-        tipo_paciente = "Novo";
-        
       }
 
         if(paciente.Tipo_Paciente != tipo_paciente) {
