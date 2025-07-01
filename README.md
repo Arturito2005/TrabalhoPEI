@@ -1,3 +1,5 @@
+Este repositorio contei o trabalho realizado pelo meu grupo, como trabalho prático da cadeira PEI (Processamento Estruturado de Informação).
+
 Neste ReadMe vamos criar "mapa" das pastas que criamos indicando o tipo de conteudo presente em cada uma.
 
 Na pasta EstruturaXML, estão lá guardados os xsd que criamos juntamente de dois exemplos de XML, um para cada tipo de relatorio, gerados pelas nossas Xquery.
